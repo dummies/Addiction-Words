@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Addiction</title>
+<script>
+            window.onload = function() {
+                var labels = document.getElementsByTagName('th');
+                for (var i = 0; i < labels.length; i++) {
+                    disableSelection(labels[i]);
+                }			
+			loadwords();
+            };
+            function disableSelection(element) {
+                if (typeof element.onselectstart != 'undefined') {
+                    element.onselectstart = function() { return false; };
+                } else if (typeof element.style.MozUserSelect != 'undefined') {
+                    element.style.MozUsserSelect = 'none';
+                } else {
+                    element.onmousedown = function() { return false; };
+                }
+            }
+        </script>
+<script>
+document.onselectstart = function(){ return false; }
+</script>
+<script src="js/gameplay.js" ></script>
+<link href="styles/check_cs6.css" rel="stylesheet" type="text/css">
+<link href="styles/table.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="container" >
+    <div id="header">
+        <img style="background-color:transparent;float:left" src="images/logo1.PNG" width="289" height="55" >
+        <p>&nbsp;</p>
+        <ul>
+            <li><a href="game.html">game</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="#">others</a></li>
+        </ul>
+    </div>
+</div>
+<div>
+<div style="height:50px;" id="top_div" onMouseMove="mousemove('top div')">
+&nbsp;</div>
+<div >
+<div style="float:left;width:65px;height:360px;" onMouseMove="mousemove('left div')" id="left_div">
+&nbsp;
+ </div>
+<div style="float:left;width:auto;" >
+ <table onMouseUp="mouseup()" style="border-top-left-radius:10px ;border-top-right-radius:10px; border-bottom-left-radius: 10px; border-bottom-right-radius:10px ; box-shadow:5px 5px 10px #999" width="360" height="360"  border="1" align="center" cellpadding="5" class="otable" id= "game">
+   <tr id="tr1">
+    <th> <button id="11" class="buttoncss" onmousedown ="mousedown('11')" onMouseUp ="mouseup('11')" onMouseOver="mouseover('11')" type="button">C</button> </th>
+     <th>  <button id="12"  class="buttoncss" onmousedown ="mousedown('12')" onMouseUp ="mouseup('12')" onMouseOver="mouseover('12')" type="button">U</button> </th>
+     <th>  <button id="13"  class="buttoncss" onmousedown ="mousedown('13')" onMouseUp ="mouseup('13')" onMouseOver="mouseover('13')" type="button">R</button> </th>
+     <th>  <button id="14"  class="buttoncss" onmousedown ="mousedown('14')" onMouseUp ="mouseup('14')" onMouseOver="mouseover('14')" type="button">U</button></th>
+   </tr>
+   <tr>
+     <th>  <button id="21"  class="buttoncss" onmousedown ="mousedown('21')" onMouseUp ="mouseup('21')" onMouseOver="mouseover('21')" type="button">I</button></th>
+     <th>  <button id="22"  class="buttoncss" onmousedown ="mousedown('22')" onMouseUp ="mouseup('22')" onMouseOver="mouseover('22')" type="button">A</button></th>
+     <th>  <button id="23"  class="buttoncss" onmousedown ="mousedown('23')" onMouseUp ="mouseup('23')" onMouseOver="mouseover('23')" type="button">E</button></th>
+     <th>  <button id="24"  class="buttoncss" onmousedown ="mousedown('24')" onMouseUp ="mouseup('24')" onMouseOver="mouseover('24')" type="button">D</button></th>
+   </tr>
+   <tr>
+     <th>  <button id="31"  class="buttoncss" onmousedown ="mousedown('31')" onMouseUp ="mouseup('31')" onMouseOver="mouseover('31')" type="button">S</button></th>
+     <th>  <button id="32"  class="buttoncss" onmousedown ="mousedown('32')" onMouseUp ="mouseup('32')" onMouseOver="mouseover('32')" type="button">T</button></th>
+     <th>  <button id="33"  class="buttoncss" onmousedown ="mousedown('33')" onMouseUp ="mouseup('33')" onMouseOver="mouseover('33')" type="button">Y</button></th>
+     <th>  <button id="34"  class="buttoncss" onmousedown ="mousedown('34')" onMouseUp ="mouseup('34')" onMouseOver="mouseover('34')" type="button">A</button></th>
+   </tr>
+   <tr>
+     <th>  <button id="41"  class="buttoncss" onmousedown ="mousedown('41')" onMouseUp ="mouseup('41')" onMouseOver="mouseover('41')" type="button">B</button></th>
+     <th>  <button id="42"  class="buttoncss" onmousedown ="mousedown('42')" onMouseUp ="mouseup('42')" onMouseOver="mouseover('42')" type="button">L</button></th>
+     <th>  <button id="43"  class="buttoncss" onmousedown ="mousedown('43')" onMouseUp ="mouseup('43')" onMouseOver="mouseover('43')" type="button">A</button></th>
+     <th>  <button id="44"  class="buttoncss" onmousedown ="mousedown('44')" onMouseUp ="mouseup('44')" onMouseOver="mouseover('44')" type="button">S</button></th>
+   </tr>
+ </table>
+</div>
+<div style="float:left;width:105px;height:360px;"  onMouseMove="mousemove('right div')"  id="right_div" > 
+&nbsp;
+</div>
+<div style="float:left;position:relative; top: -20px;"> 
+<label> Found Words </label> 
+<ul id="foundwords" style="height:360px;width:100px;overflow-x: scroll;background: #FEF;position:relative; top: -15px;">
+<!--<LH>Found Words</LH>-->
+</ul>
+</div>
+<div style="float: left;" >
+<label style="font-size:24px;position:relative ; left: +120px; color:#666;"  > Score </label>
+</br>
+<label id="score" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#008000;position:relative ; left: +120px;"></label>
+</div>
+</div>
+<div style="height:50px;position:relative;top:+360px;" onMouseMove="mousemove('bottom div')" id="bottom_div">
+&nbsp;
+</div>
+</div>
+</body>
+</html>
