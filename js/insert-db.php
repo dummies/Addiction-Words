@@ -20,15 +20,23 @@
     }
 	//comment here once table created.
   $sql = "CREATE TABLE scoreboard(name VARCHAR(30), score number)";
+  print '<script type="text/javascript">'; 
+  print 'alert("table created")';
+  print '</script>';  
   
   $name = $_GET["name"];
   $score = $_GET["score"];
-  
+   print '<script type="text/javascript">'; 
+  print 'alert("name = "+ name +"score =" +score ) ';
+  print '</script>';  
   $sql_insert = "INSERT INTO scoreboard(name,score) 
                    VALUES (?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $name);
         $stmt->bindValue(2, $score);
         $stmt->execute();
+		 print '<script type="text/javascript">'; 
+   print 'alert("inserted") ';
+     print '</script>'; 
    echo 'success';	
 ?>
