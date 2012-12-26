@@ -17,16 +17,28 @@
 //	 $conn->query($sql1);
 //$sql3 = "TRUNCATE TABLE scoreboard";
 //$conn->query($sql3);
-        $name = $_GET["name"];
-        $score = $_GET["score"];
+      try 
+	{
+        $name = $_POST['name'];
+        $score = $_POST['score'];
         // Insert data
+		if($name&&$score)
+		{
         $sql_insert = "INSERT INTO scoreboard (name, score) 
-                   VALUES ($name,$score)";
-        /*$stmt = $conn->prepare($sql_insert);
+                   VALUES (?,?)";
+        $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $name);
         $stmt->bindValue(2, $score);
-        $stmt->execute();*/
-		$conn->query($sql_insert);
-	echo "Data entered!"
-		
-?>
+
+        $stmt->execute();
+		echo "<h3>Your're registered!</h3>";
+		}
+    }
+    catch(Exception $e)
+    {
+        die(var_dump($e));
+    }
+        /*$stmt->bindValue(1, $name);
+        $stmt->bindValue(2, $score);
+        $stmt->execute();  */
+	?>
