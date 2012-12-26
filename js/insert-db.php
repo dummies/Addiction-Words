@@ -19,7 +19,7 @@
         die(var_dump($e));
     }
 	//comment here once table created.
-  $sql = "CREATE TABLE scoreboard(name VARCHAR(30), score number)";
+/*  $sql = "CREATE TABLE scoreboard(name VARCHAR(30), score number)";*/
   print '<script type="text/javascript">'; 
   print 'alert("table created")';
   print '</script>';  
