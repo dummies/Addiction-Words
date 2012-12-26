@@ -23,9 +23,9 @@
   
   $name = $_GET["name"];
   $score = $_GET["score"];
-  /*print '<script type="text/javascript">'; 
+  print '<script type="text/javascript">'; 
   print 'alert("name = "+ $name +"score =" + $score ) ';
-  print '</script>';  */
+  print '</script>';  
   $sql_insert = "INSERT INTO score_board(name,score) 
                    VALUES (?,?)";
         $stmt = $conn->prepare($sql_insert);
