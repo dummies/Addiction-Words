@@ -19,20 +19,19 @@
 //$conn->query($sql3);
       try 
 	{
-        $name = $_POST['name'];
-        $score = $_POST['score'];
-        // Insert data
-		if($name&&$score)
-		{
+        $name = $_GET["name"];
+        $score = $_GET['score'];
+
         $sql_insert = "INSERT INTO scoreboard (name, score) 
                    VALUES (?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $name);
         $stmt->bindValue(2, $score);
-
         $stmt->execute();
 		echo "<h3>Your're registered!</h3>";
-		}
+		print '<script>';
+		print 'alert("inserted")';
+		print '</script>';
     }
     catch(Exception $e)
     {
