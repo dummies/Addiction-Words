@@ -19,12 +19,12 @@
         die(var_dump($e));
     }
 	//comment here once table created.
- /* $sql = "CREATE TABLE score_board(name VARCHAR(30), score int)"; */
+  $sql = "CREATE TABLE _scoreboard(name VARCHAR(30), score int)"; 
   
   $name = $_GET["name"];
   $score = $_GET["score"];  
  
-  $sql_insert = "INSERT INTO score_board(name, score) 
+  $sql_insert = "INSERT INTO _scoreboard(name, score) 
                    VALUES (?,?)";
  print '<script type="text/javascript">'; 
   print 'alert("at 1")';
