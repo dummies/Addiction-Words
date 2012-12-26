@@ -1,38 +1,11 @@
 // JavaScript Document
 var val =false;
 var tab = [false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false];
-var str ="",prev =-1;
-var score =0;
-var truth;
+var tdarray =[] ,foundwordsarr = [];
+var str =new String("");
 var words;
+var prev =-1,score =0 ,valid =false ,exist =false;
 
-
-
-function loadwords()
-{
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'Data/op.txt', false);
-xhr.send(null);
-words = xhr.responseText.split('\n');
-}
-
-function isvalidword() {
-      var beginning = 0, end = words.length,target;
-      while (true) {
-          target = Math.floor((beginning + end) / 2);
-          if ((target === end || target === beginning) && arr[target] !== ele) {
-              return -1;
-          }
-          if (arr[target] > str) {
-              end = target;
-          } else if (arr[target] < str) {
-              beginning = target;
-          } else {
-              return target;
-          }
-      }
-  }
-  
 function convert(m) {
 	return (parseInt((m-11)/10)*4 + (m%10) -1);
 }
@@ -41,6 +14,8 @@ function changetext(td)
 	document.getElementById(td).className ="buttoncssmod";
 }
 function mousedown(td ) {
+	//clearing
+	tdarray.length =0;
 	var tmp =document.getElementById(td).innerHTML;
 	if(!val)
 		   val =true;
@@ -49,23 +24,12 @@ function mousedown(td ) {
 	str += tmp; 
 	tab[convert(td)] =true;
 	changetext(td);
+	tdarray.push(td);
 	//console.log("mouse down");
 	}
 	
 	//alert(tmp);
 	//console.log(td);
-}
-function updatescore()
-{
-	var len =str.length ,validity =isvalidword();
-	if(len >2 && validity != -1) {
-	score += len *len;
-	document.getElementById("score").innerHTML = score;
-	addfoundword();
-	}
-	else {
-		console.info("not defined");
-	}
 }
 
 function mouseover(td) {
@@ -73,13 +37,14 @@ function mouseover(td) {
 	if(val && !tab[convert(td)] )  {
 	var curr =convert(td);
 	++curr;
-	var diff = Math.abs(curr -prev);
-	if(diff ==1 || diff==3 || diff ==4 || diff ==5)
+	var cal = Math.abs(curr-prev);
+	if(cal ==1 || cal==3 || cal ==4 || cal==5)
 	{
 	str += tmp;
 	tab[convert(td)] =true;
 	changetext(td);
 	prev =curr;
+	tdarray.push(td);
 	}
 	//console.log("mouse over");
 	}
@@ -90,39 +55,87 @@ function mousemove(elm)
 	mouseup();
 }
 
+
 function mouseup() {
 	//alert("Mouse Up,index clicked :");
 	if(val) {
-	 //var url ="phplogic.php?str="+str;
-	//callvalidate('phplogic.php?str='+str);
-   // var truth = callvalidate(str);
-   // ajaxFunction();
 	updatescore();
-		//console.log("mouse up");
+	highlightblocks();
 	val =false;
 	for(var i=0;i<16;++i) tab[i] =false;
-			 document.getElementById("11").className ="buttoncss";
-			 document.getElementById("12").className ="buttoncss";
-			 document.getElementById("13").className ="buttoncss";
-			 document.getElementById("14").className ="buttoncss";
-			 document.getElementById("21").className ="buttoncss";
-			 document.getElementById("22").className ="buttoncss";
-			 document.getElementById("23").className ="buttoncss";
-			 document.getElementById("24").className ="buttoncss";
-			 document.getElementById("31").className ="buttoncss";
-			 document.getElementById("32").className ="buttoncss";
-			 document.getElementById("33").className ="buttoncss";
-			 document.getElementById("34").className ="buttoncss";
-			 document.getElementById("41").className ="buttoncss";
-			 document.getElementById("42").className ="buttoncss";
-			 document.getElementById("43").className ="buttoncss";
-			 document.getElementById("44").className ="buttoncss";
-	//console.log(str);
 	str="";
 	prev =-1;
-	truth ;
 	}
 }
+function highlightblocks()
+{
+	if(valid && !exist) {
+		for(var i=0;i<tdarray.length;++i)
+		  document.getElementById(tdarray[i]).className = "buttoncsscorrect";
+	}
+	else if(exist) 
+	{
+		for(var i=0;i<tdarray.length;++i)
+		  document.getElementById(tdarray[i]).className = "buttoncssexisting";
+	}
+	else {
+		for(var i=0;i<tdarray.length;++i)
+		  document.getElementById(tdarray[i]).className = "buttoncsswrong";
+	}
+	setTimeout('resetcss()',300);
+}
+function resetcss() {
+	 document.getElementById("11").className ="buttoncss";
+	 document.getElementById("12").className ="buttoncss";
+	 document.getElementById("13").className ="buttoncss";
+	 document.getElementById("14").className ="buttoncss";
+	 document.getElementById("21").className ="buttoncss";
+	 document.getElementById("22").className ="buttoncss";
+	 document.getElementById("23").className ="buttoncss";
+	 document.getElementById("24").className ="buttoncss";
+	 document.getElementById("31").className ="buttoncss";
+	 document.getElementById("32").className ="buttoncss";
+	 document.getElementById("33").className ="buttoncss";
+	 document.getElementById("34").className ="buttoncss";
+	 document.getElementById("41").className ="buttoncss";
+	 document.getElementById("42").className ="buttoncss";
+	 document.getElementById("43").className ="buttoncss";
+	 document.getElementById("44").className ="buttoncss";
+}
+
+function updatescore()
+{
+	var len =str.length;
+	valid =false;
+	exist =false;
+	if(len>2 ) {	
+	//valid = isvalidword();
+	for(var i=0;i<foundwordsarr.length;++i) {
+		if(foundwordsarr[i] == str) 
+		  exist =true;
+	}
+	if(!exist)  {
+		for(var i=0;i<words.length;++i) {
+		if(words[i] == str) 
+		valid =true;
+	}
+	if(valid) 
+	{
+	score += len *len;
+	document.getElementById("score").innerHTML = score;	
+    addfoundword();	
+	}
+	else
+	console.log("invalid word");
+	}
+	else
+	console.log(" already found");
+	}
+	else
+	console.log('too short');
+}
+
+
 function addfoundword()
 {
 	var found = document.getElementById("foundwords");
@@ -130,4 +143,42 @@ function addfoundword()
 	var fword= document.createTextNode(str);
 	word.appendChild(fword);
 	found.appendChild(word);
+	foundwordsarr.push(str);
 }
+
+
+function loadwords()
+{
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'Data/op.txt', false);
+xhr.send(null);
+words = xhr.responseText.split(',');
+//console.info(words.length + "are avilable");
+//console.info(words[0][0]);
+//for(var i=0;i<100;++i)
+//console.info(words[i]);
+}
+
+
+//binary search algo -not used ,some bugs ..complexity O(LOGN)
+function isvalidword() {
+      var beginning = 0, end = words.length,mid ;
+      while (true) {
+          mid = Math.floor((beginning + end) / 2);
+		  if ((mid === end || mid === beginning) && words[mid]!== str) {
+              return -1;
+          }
+          if (str > words[mid] ) {
+              end = mid;
+          } else if (str < words[mid]) {
+             beginning =mid;
+          } 
+		  else 
+		  return mid;
+      }
+  }
+  
+function submitgame() {
+	alert("your score ="+ document.getElementById("score").innerHTML + " ,no of words :" + foundwordsarr.length +" !" );
+}
+  
