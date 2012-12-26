@@ -19,7 +19,7 @@
         die(var_dump($e));
     }
 	//comment here once table created.
-  //$sql = "CREATE TABLE _scoreboard(name VARCHAR(30), score int)"; 
+ $sql = "CREATE TABLE score_card(name VARCHAR(30), score int)"; 
   
   
   //$con = mysql_connect("localhost","peter","abc123");
