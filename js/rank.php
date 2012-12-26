@@ -19,7 +19,7 @@
 <body>
 <h1>Register here!</h1>
 <p>Fill in your name and score address, then click <strong>Submit</strong> to register.</p>
-<form method="post" action="newindex.php" enctype="multipart/form-data" >
+<form method="post" action="rank.php" enctype="multipart/form-data" >
       Name  <input type="text" name="name" id="name"/></br>
       score <input type="text" name="score" id="score"/></br>
       <input type="submit" name="submit" value="Submit" /></br>
