@@ -185,7 +185,7 @@ function submitgame() {
 	
 //submit to db
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'js/insert-db.php?name='+vamshi+'&score='+score, true);
+xhr.open('GET', 'js/insert-db.php?name=vamshi&score='+score, true);
 xhr.send(null);
 console.info(xhr.responseText);
 	
