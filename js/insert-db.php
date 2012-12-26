@@ -15,8 +15,8 @@
     }
 // $sql1 = "CREATE TABLE scoreboard( name VARCHAR(30), score int)";
 //	 $conn->query($sql1);
-//$sql3 = "TRUNCATE TABLE scoreboard";
-//$conn->query($sql3);
+$sql3 = "TRUNCATE TABLE scoreboard";
+$conn->query($sql3);
       try 
 	{
         $name = $_GET["name"];
@@ -28,16 +28,9 @@
         $stmt->bindValue(1, $name);
         $stmt->bindValue(2, $score);
         $stmt->execute();
-		echo "<h3>Your're registered!</h3>";
-		print '<script>';
-		print 'alert("inserted")';
-		print '</script>';
     }
     catch(Exception $e)
     {
         die(var_dump($e));
     }
-        /*$stmt->bindValue(1, $name);
-        $stmt->bindValue(2, $score);
-        $stmt->execute();  */
-	?>
+?>

@@ -187,9 +187,6 @@ var xhr = new XMLHttpRequest();
 xhr.open('GET', 'js/insert-db.php?name=player&score='+score, true);
 xhr.send(null);
 console.log(xhr.responseText);
-setTimeout('moveurl()',10000);
-}
-function moveurl() {
-	window.location.replace("js/rank.php");
+window.location.replace("js/rank.php");
 }
 
