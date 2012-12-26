@@ -1,6 +1,7 @@
 <html>
 <body>
 <?php 
+echo 'website';
  $sql_select = "SELECT * FROM scoreboard order by score desc";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
