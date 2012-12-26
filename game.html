@@ -5,6 +5,7 @@
 <title>Addiction</title>
 <script>
             window.onload = function() {
+				loadwords();
 				var seconds_left =90;
 				var interval = setInterval(function() {
     document.getElementById('timer_div').innerHTML = --seconds_left;
@@ -19,7 +20,6 @@
                 for (var i = 0; i < labels.length; i++) {
                     disableSelection(labels[i]);
                 }			
-			loadwords();
             };
             function disableSelection(element) {
                 if (typeof element.onselectstart != 'undefined') {
@@ -91,14 +91,14 @@ document.onselectstart = function(){ return false; }
 </div>
 <div style="float:left;position:relative; top: -20px;"> 
 <label> Found Words </label> 
-<ul id="foundwords" style="height:360px;width:100px;overflow-x: scroll;background: #FEF;position:relative; top: -15px;">
+<ul id="foundwords_div" style="height:360px;width:100px;overflow-x: scroll;background: #FEF;position:relative; top: -15px;">
 <!--<LH>Found Words</LH>-->
 </ul>
 </div>
 <div style="float: left;" >
 <label style="font-size:24px;position:relative ; left: +120px; color:#666;"  > Score </label>
 <br/>
-<label id="score" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#008000;position:relative ; left: +120px;"></label>
+<label id="score_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#008000;position:relative ; left: +120px;"></label>
 </div>
 <div style="float: left;" >
 <label style="font-size:24px;position:relative ; left: +180px; color:#004080;"  > Time left </label>

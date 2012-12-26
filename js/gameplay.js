@@ -122,7 +122,7 @@ function updatescore()
 	if(valid) 
 	{
 	score += len *len;
-	document.getElementById("score").innerHTML = score;	
+	document.getElementById("score_div").innerHTML = score;	
     addfoundword();	
 	}
 	else
@@ -138,7 +138,7 @@ function updatescore()
 
 function addfoundword()
 {
-	var found = document.getElementById("foundwords");
+	var found = document.getElementById("foundwords_div");
 	var word = document.createElement("li");
 	var fword= document.createTextNode(str);
 	word.appendChild(fword);
