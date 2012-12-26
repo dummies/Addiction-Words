@@ -13,8 +13,8 @@
 	{
         die(var_dump($e));
     }
-     $sql1 = "CREATE TABLE scoreboard( name VARCHAR(30), score int)";
-	 $conn->query($sql1);
+    // $sql1 = "CREATE TABLE scoreboard( name VARCHAR(30), score int)";
+//	 $conn->query($sql1);
         $name = $_GET["name"];
         $score = $_GET["score"];
         // Insert data
