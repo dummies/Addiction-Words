@@ -22,18 +22,25 @@
  /* $sql = "CREATE TABLE score_board(name VARCHAR(30), score int)"; */
   
   $name = $_GET["name"];
-  $score = $_GET["score"];
-  print '<script type="text/javascript">'; 
-  print 'alert("name = "+ $name +"score =" + $score ) ';
-  print '</script>';  
-  $sql_insert = "INSERT INTO score_board(name,score) 
+  $score = $_GET["score"];  
+ 
+  $sql_insert = "INSERT INTO score_board(name, score) 
                    VALUES (?,?)";
+ print '<script type="text/javascript">'; 
+  print 'alert("at 1")';
+  print '</script>';  
         $stmt = $conn->prepare($sql_insert);
-        $stmt->bindValue(1, $name);
-        $stmt->bindValue(2, $score);
+        $stmt->bindValue(0, $name);
+        $stmt->bindValue(1, $score);
+print '<script type="text/javascript">'; 
+  print 'alert("at 2");
+  print '</script>';  
         $stmt->execute();
    print '<script type="text/javascript">'; 
-   print 'alert("inserted") ';
-   print '</script>'; 
+  print 'alert("at 5");
+    print '</script>';  
+  print '<script type="text/javascript">'; 
+  print 'alert("inserted") ';
+  print '</script>'; 
    echo 'success';	
 ?>
