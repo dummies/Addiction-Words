@@ -184,16 +184,9 @@ function submitgame() {
 alert("your score ="+ document.getElementById("score_div").innerHTML + " ,no of words :" + foundwordsarr.length +" !" );
 //submit to db
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'js/insert-db.php?name=' + name()+ '&score='+score, true);
+xhr.open('GET', 'js/insert-db.php?name=player&score='+score, true);
 xhr.send(null);
 console.log(xhr.responseText);
 window.location.replace("js/rank.php");
 }
 
-function name() 
-{
-	var str ="name";
-	str.concat(Math.floor((Math.random()*1000)+1));
-	return str;
-}
-  

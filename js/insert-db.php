@@ -27,4 +27,9 @@
         $stmt->bindValue(2, $score);
         $stmt->execute();
 		echo "Data entered!";
+		 $sql_select = "SELECT * FROM scoreboard order by score desc";
+    $stmt = $conn->query($sql_select);
+    $registrants = $stmt->fetchAll(); 
+	echo $registrants;
+		
 ?>
