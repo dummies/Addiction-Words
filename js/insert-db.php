@@ -21,7 +21,6 @@ $conn->query($sql3);
 	{
         $name = $_GET["name"];
         $score = $_GET['score'];
-
         $sql_insert = "INSERT INTO scoreboard (name, score) 
                    VALUES (?,?)";
         $stmt = $conn->prepare($sql_insert);
