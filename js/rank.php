@@ -5,7 +5,7 @@ echo 'website';
  $sql_select = "SELECT * FROM scoreboard order by score desc";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
-    if(count($registrants) > 0)
+    if(count($registrants) >= 0)
 	{
         echo "<h2>People who Played:</h2>";
         echo "<table>";
