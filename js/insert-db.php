@@ -21,15 +21,12 @@
         $score = $_GET["score"];
         // Insert data
         $sql_insert = "INSERT INTO scoreboard (name, score) 
-                   VALUES (?,?)";
-        $stmt = $conn->prepare($sql_insert);
+                   VALUES ($name,$score)";
+        /*$stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $name);
         $stmt->bindValue(2, $score);
-        $stmt->execute();
-		echo "Data entered!";
-		 $sql_select = "SELECT * FROM scoreboard order by score desc";
-    $stmt = $conn->query($sql_select);
-    $registrants = $stmt->fetchAll(); 
-	echo $registrants;
+        $stmt->execute();*/
+		$conn->query($sql_insert);
+	echo "Data entered!"
 		
 ?>
