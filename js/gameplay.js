@@ -179,6 +179,6 @@ function isvalidword() {
   }
   
 function submitgame() {
-	alert("your score ="+ document.getElementById("score").innerHTML + " ,no of words :" + foundwordsarr.length +" !" );
+	alert("your score ="+ document.getElementById("score_div").innerHTML + " ,no of words :" + foundwordsarr.length +" !" );
 }
   
