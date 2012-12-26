@@ -24,5 +24,5 @@
         $stmt->bindValue(1, $name);
         $stmt->bindValue(2, $score);
         $stmt->execute();
-		echo "<h3>Data entered!</h3>";
+		echo "Data entered!";
 ?>
