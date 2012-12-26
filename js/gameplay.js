@@ -177,8 +177,17 @@ function isvalidword() {
 		  return mid;
       }
   }
+
+
   
 function submitgame() {
 	alert("your score ="+ document.getElementById("score_div").innerHTML + " ,no of words :" + foundwordsarr.length +" !" );
+	
+//submit to db
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'js/insert-db.php?name='+vamshi+'&score='+score, true);
+xhr.send(null);
+console.info(xhr.responseText);
+	
 }
   
