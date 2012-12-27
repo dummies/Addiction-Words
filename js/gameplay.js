@@ -3,8 +3,10 @@ var val =false;
 var tab = [false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false];
 var tdarray =[] ,foundwordsarr = [];
 var str =new String("");
+var site_url = "http://www.word-addiction.azurewebsites.net";
 var words;
 var name;
+var seconds_left ;
 var prev =-1,score =0 ,valid =false ,exist =false;
 
 function convert(m) {
@@ -226,3 +228,46 @@ for(var i=0;i<gamearr.length;++i)
 function decrypt(n) {
 	return parseInt((n/4)+1)*10+(n%4)+1;
 }
+
+function init() {
+	//all initlization stuff
+	loadwords();
+	loadpuzzle();
+	name = window.localStorage.getItem('name');
+	document.onselectstart = function(){ return false; }
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'js/timer.php',false);
+	xhr.send(null);
+	console.log(xhr.responseText);
+    var tmp = parseInt(xhr.responseText);
+	//decide before or aftre the game.
+	if(tmp <=120 ) {
+	   seconds_left = 120-tmp;
+	}
+	else {
+		window.location.replace(site_url);
+	}
+	var interval = setInterval(function() {
+    document.getElementById('timer_div').innerHTML = --seconds_left;
+    if (seconds_left <= 0)
+    {
+        document.getElementById('timer_div').innerHTML = "Time's up";
+        clearInterval(interval);
+		submitgame();
+    }
+}, 1000);
+	var labels = document.getElementsByTagName('th');
+	for (var i = 0; i < labels.length; i++) {
+		disableSelection(labels[i]);
+	}  			
+}
+function disableSelection(element) 
+			{
+                if (typeof element.onselectstart != 'undefined') {
+                    element.onselectstart = function() { return false; };
+                } else if (typeof element.style.MozUserSelect != 'undefined') {
+                    element.style.MozUsserSelect = 'none';
+                } else {
+                    element.onmousedown = function() { return false; };
+                }
+            }	
