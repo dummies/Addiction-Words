@@ -3,7 +3,7 @@ var val =false;
 var tab = [false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false];
 var tdarray =[] ,foundwordsarr = [];
 var str =new String("");
-var site_url = "http://www.word-addiction.azurewebsites.net";
+var site_url = "http://word-addiction.azurewebsites.net/";
 var words;
 var name;
 var seconds_left ;
