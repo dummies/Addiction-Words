@@ -27,12 +27,23 @@
   <div id="user" >
     <label style="text-align:end;font-size:12px;"> Login with facebook </label>
     <br/>
-  <img src="images/facebook.png" onClick="login()" width="64" height="64"></div>
-  <div id="main_image">
+   <div id="login">
+ <p><button onClick="loginUser();">Login</button></p>
+ </div>
+ <div id="logout">
+   <p><button  onClick="FB.logout();">Logout</button></p>
+ </div>
+  <div id="user-info"></div>
     <input name="play" onClick="location.href = 'game.html' " type="submit" id="play" value="Play now">
   </div>
 
 </div>
+<style>
+  body.connected #login { display: none; }
+  body.connected #logout { display: block; }
+  body.not_connected #login { display: block; }
+  body.not_connected #logout { display: none; }
+</style>
 
 </body>
 </html>

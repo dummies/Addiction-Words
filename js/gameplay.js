@@ -4,6 +4,7 @@ var tab = [false ,false ,false ,false ,false ,false ,false ,false ,false ,false 
 var tdarray =[] ,foundwordsarr = [];
 var str =new String("");
 var words;
+var name;
 var prev =-1,score =0 ,valid =false ,exist =false;
 
 function convert(m) {
@@ -184,10 +185,10 @@ function submitgame() {
 alert("your score ="+ document.getElementById("score_div").innerHTML + " ,no of words :" + foundwordsarr.length +" !" );
 //submit to db
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'js/insert-db.php?name=player&score='+score, true);
+xhr.open('GET', 'js/insert-db.php?name='+name+'&score='+score,false);
 xhr.send(null);
 console.log(xhr.responseText);
-setTimeout('moveurl()',1000);
+setTimeout('moveurl()',200);
 
 }
 

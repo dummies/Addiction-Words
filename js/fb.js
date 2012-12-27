@@ -8,7 +8,7 @@
       cookie     : true, // set sessions cookies to allow your server to access the session?
       xfbml      : true  // parse XFBML tags on this page?
     });
-	
+	 FB.Event.subscribe('auth.statusChange', handleStatusChange);
   // Load the SDK Asynchronously
   (function(d){
      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
@@ -50,11 +50,22 @@ function login() {
         }
     });
 }
-function trylogin() {
-	if(loaded) 
-	login();
-	else
-	console.log('sdk not loaded');
+function loginUser() {    
+     FB.login(function(response) { }, {scope:'email'});     
+   }
+function handleStatusChange(response) {
+document.body.className = response.authResponse ? 'connected' : 'not_connected';
+      if (response.authResponse) {
+        console.log(response);
+        updateUserInfo(response);
+      }
+    }
+function updateUserInfo(response) 
+{
+	   console.log(response);
+     FB.api('/me', function(response) {
+       document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + 'hello ' + response.name;
+     });
+	 //store user details.
+	 window.localStorage.setItem("name",response.name);
 }
-
-  
