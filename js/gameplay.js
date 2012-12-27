@@ -151,7 +151,7 @@ function addfoundword()
 function loadwords()
 {
 var words =window.localStorage.getItem('storedwords');
-if(typeof(words) == undefined)  {
+if(words==null)  {
 	//first time cgame
 	var xhr = new XMLHttpRequest();
     xhr.open('GET', 'Data/op.txt', false);
