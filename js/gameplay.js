@@ -205,13 +205,18 @@ window.location.href = "js/rank.php";
 
 
 function loadpuzzle() {
+	var tmp;
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'js/puzzle.php',false);
 xhr.send(null);
 console.log(xhr.responseText);
 var gamearr = xhr.responseText;
 for(var i=0;i<gamearr.length;++i) 
-	document.getElementById(decrypt(i)).innerHTML = gamearr[i];
+{
+ tmp = decrypt(i);	
+ console.log(tmp);
+ document.getElementById(tmp).innerHTML = gamearr[i];
+}
 }
 
 function decrypt(n) {
