@@ -150,10 +150,15 @@ function addfoundword()
 
 function loadwords()
 {
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'Data/op.txt', false);
-xhr.send(null);
-words = xhr.responseText.split(',');
+var words =window.localStorage.getItem('storedwords');
+if(typeof(words) == undefined)  {
+	//first time cgame
+	var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'Data/op.txt', false);
+    xhr.send(null);
+   words = xhr.responseText.split(',');
+   window.localStorage.setItem('storedwords',words);
+}
 //console.info(words.length + "are avilable");
 //console.info(words[0][0]);
 //for(var i=0;i<100;++i)
@@ -188,10 +193,27 @@ var xhr = new XMLHttpRequest();
 xhr.open('GET', 'js/insert-db.php?name='+name+'&score='+score,false);
 xhr.send(null);
 console.log(xhr.responseText);
-setTimeout('moveurl()',200);
+window.location.href = "js/rank.php";
+//setTimeout('moveurl()',200);
 
 }
 
+
 function moveurl() {
 window.location.href = "js/rank.php";
+}
+
+
+function loadpuzzle() {
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'js/puzzle.php',false);
+xhr.send(null);
+console.log(xhr.responseText);
+var gamearr = xhr.responseText;
+for(var i=0;i<gamearr.length;++i) 
+	document.getElementById(decrypt(i)).innerHTML = gamearr[i];
+}
+
+function decrypt() {
+	return parseInt((n/4)+1)*10+(n%4);
 }
