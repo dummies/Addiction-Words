@@ -220,5 +220,5 @@ for(var i=0;i<gamearr.length;++i)
 }
 
 function decrypt(n) {
-	return parseInt((n/4)+1)*10+(n%4);
+	return parseInt((n/4)+1)*10+(n%4)+1;
 }
