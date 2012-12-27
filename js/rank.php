@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<Title>Registration Form</Title>
+<Title>Player board</Title>
 <style type="text/css">
     body { background-color: #fff; border-top: solid 10px #000;
         color: #333; font-size: .85em; margin: 20; padding: 20;
@@ -17,14 +17,14 @@
 </style>
 </head>
 <body>
-<h1>Register here!</h1>
-<p>Fill in your name and score address, then click <strong>Submit</strong> to register.</p>
-<form method="post" action="rank.php" enctype="multipart/form-data" >
-      Name  <input type="text" name="name" id="name"/></br>
-      score <input type="text" name="score" id="score"/></br>
-      <input type="submit" name="submit" value="Submit" /></br>
-      <input type="submit" name="sort" value="sort" ></button>
-</form>
+<h1>Player board</h1>
+<p>Below are the players who made it to top of player board <strong>Congrats</strong>! </p>
+<div>
+<label style="font-size:24px;color:#004080;"  > Time left </label>
+<label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0080FF;position:relative ; left: +100px;"></label>
+</div>
+<br/>
+
 <?php
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
@@ -34,10 +34,16 @@
     $pwd = "ee7246b9";
     $db = "wordaddABbVVe2ev";
     // Connect to database.
+	$min = date('i');
+	$sec = date('s');
+	$res = ( $min *60 + $sec ) %180;   
+	$time=180-$res;
+	echo 'document.getElementById("timer_div").innerHTML = 60';
+	/*print '<script src="count.js"> </script>';*/
     try 
 	{
         $conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION      );
     }
     catch(Exception $e)
 	{
@@ -47,42 +53,7 @@
 		$conn->query($sql1);*/
 		
     // Insert registration info
-    if(isset($_POST['submit'])) 
-	{
-    try 
-	{
-        $name = $_POST['name'];
-        $score = $_POST['score'];
-        // Insert data
-		if($name&&$score&&!isset($_POST['sort']))
-		{
-        $sql_insert = "INSERT INTO scoreboard (name, score) 
-                   VALUES (?,?)";
-        $stmt = $conn->prepare($sql_insert);
-        $stmt->bindValue(1, $name);
-        $stmt->bindValue(2, $score);
-
-        $stmt->execute();
-		echo "<h3>Your're registered!</h3>";
-		}
-		else
-		{
-			print '<script type="text/javascript">'; 
-			print 'alert("enter proper details")'; 
-			print '</script>';  
-
-		}
-    }
-    catch(Exception $e)
-    {
-        die(var_dump($e));
-    }
     
-    }
-	
-	
-if(isset($_POST['sort']))
-{
     // Retrieve data
     $sql_select = "SELECT * FROM scoreboard order by score desc";
     $stmt = $conn->query($sql_select);
@@ -113,7 +84,6 @@ if(isset($_POST['sort']))
 	{
         echo "<h3>No one is currently registered.</h3>";
     }
-}
 ?>
 </body>
 </html>
