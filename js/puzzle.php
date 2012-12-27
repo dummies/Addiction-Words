@@ -14,10 +14,10 @@ $len3=strlen($low)-1;
 //$len  =strlen($list)-1;
 for($i=0; $i <16;)
 {	
-	$puzzle .= $high[rand(0,$len1)];
-	$puzzle .= $medium[rand(0,$len2)];
-	$puzzle .= $low[rand(0,$len3)];
-	$puzzle .= $high[rand(0,$len1)];
+	$puzzle .= $high[mt_rand(0,$len1)];
+	$puzzle .= $medium[mt_rand(0,$len2)];
+	$puzzle .= $low[mt_rand(0,$len3)];
+	$puzzle .= $high[mt_rand(0,$len1)];
 	$i=$i+4;
 }
 //completed generation 
