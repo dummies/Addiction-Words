@@ -1,3 +1,4 @@
+ var loaded =false;
  window.fbAsyncInit = function() {
     // init the FB JS SDK
     FB.init({
@@ -12,7 +13,9 @@
   (function(d){
      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
      if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = false;
+     js = d.createElement('script'); 
+	 js.id = id; 
+	 js.async = true;
      js.src = "//connect.facebook.net/en_US/all.js";
      ref.parentNode.insertBefore(js, ref);
    }(document));
@@ -46,6 +49,12 @@ function login() {
             // cancelled
         }
     });
+}
+function trylogin() {
+	if(loaded) 
+	login();
+	else
+	console.log('sdk not loaded');
 }
 
   
