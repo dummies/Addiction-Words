@@ -214,6 +214,6 @@ for(var i=0;i<gamearr.length;++i)
 	document.getElementById(decrypt(i)).innerHTML = gamearr[i];
 }
 
-function decrypt() {
+function decrypt(n) {
 	return parseInt((n/4)+1)*10+(n%4);
 }
