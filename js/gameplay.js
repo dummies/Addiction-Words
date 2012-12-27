@@ -150,7 +150,7 @@ function addfoundword()
 
 function loadwords()
 {
-//window.localStorage.clear();
+window.localStorage.clear();
 var _words = localStorage['storewords'];
 if(_words==null)  {
 	//first time cgame
