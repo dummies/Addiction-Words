@@ -245,7 +245,7 @@ function init() {
 	   seconds_left = 120-tmp;
 	}
 	else {
-		window.location.replace(site_url);
+		window.location.href = site_url;
 	}
 	var interval = setInterval(function() {
     document.getElementById('timer_div').innerHTML = --seconds_left;
