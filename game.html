@@ -8,7 +8,7 @@
 				loadwords();
 				loadpuzzle();
 				name = window.localStorage.getItem('name');
-				var seconds_left =10;
+				var seconds_left =20;
 				var interval = setInterval(function() {
     document.getElementById('timer_div').innerHTML = --seconds_left;
     if (seconds_left <= 0)
