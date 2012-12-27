@@ -150,14 +150,17 @@ function addfoundword()
 
 function loadwords()
 {
-var words =window.localStorage.getItem('storedwords');
-if(words==null)  {
+var _words = localStorage['storewords'];
+if(_words==null)  {
 	//first time cgame
 	var xhr = new XMLHttpRequest();
     xhr.open('GET', 'Data/op.txt', false);
     xhr.send(null);
    words = xhr.responseText.split(',');
-   window.localStorage.setItem('storedwords',words);
+   localStorage['storewords']=JSON.stringify(words);
+}
+else {
+	words = JSON.parse(_words);
 }
 //console.info(words.length + "are avilable");
 //console.info(words[0][0]);
