@@ -26,12 +26,11 @@
 <script>
   window.fbAsyncInit = function() {
      FB.init({
-      appId      : '102517019918875', // App ID from the App Dashboard
-      channelUrl : 'http://word-addiction.azurewebsites.net/game.html', // Channel File for x-domain communication
-      status     : true, // check the login status upon init?
-      cookie     : true, // set sessions cookies to allow your server to access the session?
-      xfbml      : true  // parse XFBML tags on this page?
-    });
+      appId : '102517019918875', // App ID from the App Dashboard
+      status: true, 
+      cookie: true,
+      xfbml: true,
+      oauth: true});
     FB.Event.subscribe('auth.statusChange', handleStatusChange);  
   };
 </script>
