@@ -34,7 +34,9 @@ $result =$stmt->execute();
 if(count($result) > 0) 
 {
 echo "fuck me";
-echo $result;
+echo $result['id'];
+echo $result['seq'];
+echo "fucked";
 }
 else
 echo "no data fetched";
