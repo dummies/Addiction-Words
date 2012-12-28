@@ -25,6 +25,12 @@
 /*$sql1 = "CREATE TABLE games(id INT NOT NULL AUTO_INCREMENT, 
 			PRIMARY KEY(id),seq VARCHAR(16))";
 $conn->query($sql1);*/
+ignore_user_abort(true);//if caller closes the connection (if initiating with cURL from another PHP, this allows you to end the calling PHP script without ending this one)
+set_time_limit(0);
+
+$hLock=fopen(__FILE__.".lock", "w+");
+if(!flock($hLock, LOCK_EX | LOCK_NB))
+    die("Already running. Exiting...");
 while(true) 
 {
 $sql3 = "TRUNCATE TABLE games";
@@ -51,6 +57,9 @@ $conn->query($sql3);
     }
 	sleep(10);
 }
+flock($hLock, LOCK_UN);
+fclose($hLock);
+unlink(__FILE__.".lock");
 ?>
 </body>
 </html>
