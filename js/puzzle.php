@@ -20,12 +20,21 @@ $host = "us-cdbr-azure-east-b.cloudapp.net";
  //max index - 23*20 + (59) /3 = 460 +19 =479 ;
  $tmp = ($tmp-1) *10 +1 ;
  //indexes  , 1 11 21 31..... ..max = 4781
- $sqlq = "select * from games where id=".$tmp ;
+ print '<script>';
+ print 'console.log("'.$tmp.'")';
+ print '</script>';
+ try
+ {
+ $sqlq = "SELECT * FROM games WHERE id=".$tmp ;
  
  //sleep time would be 23 hr 59 mins ... => 23*60*60+59*60 = 4971540 seconds
  
  $res = $conn->query(sqlq);
- $game = $res->fetchAll(); 
- $ans = $game['seq'];
+ $ans = $res['seq'];
+ }
+ catch(Exception $e) 
+ {
+	 die($e);
+ }
  echo $ans;
 ?>

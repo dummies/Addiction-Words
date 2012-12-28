@@ -3,7 +3,7 @@ var val =false;
 var tab = [false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false];
 var tdarray =[] ,foundwordsarr = [];
 var str =new String("");
-var site_url = "http://word-addiction.azurewebsites.net/";
+var site_url = "http://word-addiction.azurewebsites.net/js/rank.php";
 var words;
 var name;
 var seconds_left ;
@@ -211,7 +211,7 @@ window.location.href = "js/rank.php";
 
 
 function loadpuzzle() {
-	var tmp;
+var tmp;
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'js/puzzle.php',false);
 xhr.send(null);
