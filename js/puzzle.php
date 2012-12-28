@@ -18,14 +18,14 @@ $host = "us-cdbr-azure-east-b.cloudapp.net";
  $tmp = $h*20 + floor($m/3) ;
  //possible indexes , 1 2 3... 
  //max index - 23*20 + (59) /3 = 460 +19 =479 ;
- $tmp = ($tmp-1) *10 +1 ;
+ $tmp = ($tmp-1)*10 +1 ;
  //indexes  , 1 11 21 31..... ..max = 4781
 /* print '<script>';
  print 'console.log("'.$tmp.'")';
  print '</script>';*/
  try
  {
- $sqlq = "SELECT * FROM games WHERE id=".$tmp ;
+ $sqlq = "SELECT * FROM games WHERE id=1";
  
  //sleep time would be 23 hr 59 mins ... => 23*60*60+59*60 = 4971540 seconds
  
