@@ -2,6 +2,12 @@
 <head>
 
 <Title>Player board</Title>
+<?php
+$min = date('i');
+$sec = date('s');
+$res = ( $min *60 + $sec ) %180;   
+$time=180-$res;
+?>
 <style type="text/css">
     body { background-color: #fff; border-top: solid 10px #000;
         color: #333; font-size: .85em; margin: 20; padding: 20;
@@ -15,21 +21,6 @@
     th { font-size: 1.2em; text-align: left; border: none; padding-left: 0; }
     td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
 </style>
-</head>
-<body>
-<h1>Player board</h1>
-<p>Below are the players who made it to top of player board <strong>Congrats</strong>! </p>
-<div>
-<label style="font-size:24px;color:#004080;"  > Time left </label>
-<label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0080FF;position:relative ; left: +100px;"></label>
-</div>
-<br/>
-<?php
-$min = date('i');
-$sec = date('s');
-$res = ( $min *60 + $sec ) %180;   
-$time=180-$res;
-?>
 <script>
 var seconds_left = <?php $time ?> ;
 var interval = setInterval(function() {
@@ -42,6 +33,16 @@ var interval = setInterval(function() {
     }
 }, 1000);
 </script>
+</head>
+<body>
+<h1>Player board</h1>
+<p>Below are the players who made it to top of player board <strong>Congrats</strong>! </p>
+<div>
+<label style="font-size:24px;color:#004080;"  > Time left </label>
+<label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0080FF;position:relative ; left: +100px;"></label>
+</div>
+<br/>
+
 
 
 <?php
