@@ -53,10 +53,6 @@ var interval = setInterval(function() {
     $pwd = "ee7246b9";
     $db = "wordaddABbVVe2ev";
     // Connect to database.
-	
-	echo '<script type="text/javascript"';
-	echo 'document.getElementById("timer_div").innerHTML = 60';
-	echo '</script>';
 	/*print '<script src="count.js"> </script>';*/
     try 
 	{
