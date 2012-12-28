@@ -25,7 +25,7 @@ $host = "us-cdbr-azure-east-b.cloudapp.net";
  print '</script>';*/
  try
  {
-$sqlq = "SELECT * FROM games WHERE id = $tmp";
+$sqlq = "SELECT * FROM games WHERE id = '$tmp'";
 
 $result =$conn->query($sqlq);
 
