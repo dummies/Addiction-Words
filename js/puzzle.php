@@ -30,11 +30,11 @@ $sqlq = "SELECT * FROM games WHERE id = ?";
 $stmt = $conn->prepare($sqlq);
 $stmt->bindValue(1, $tmp);
 $result =$stmt->execute();
-$registrants = $result->fetchAll();
-if(count($registrants) > 0) 
+
+if(count($result) > 0) 
 {
 echo "fuck me";
-echo $registrants['seq'];
+echo $result['seq'];
 }
 else
 echo "no data fetched";
