@@ -6,6 +6,8 @@
 </head>
 
 <body>
-<? phpinfo(); ?>
+<? phpinfo(); 
+
+?>
 </body>
 </html>

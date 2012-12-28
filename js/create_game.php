@@ -10,15 +10,15 @@
 try
 {
 /*$command ="schtasks /create /tn "dbpushgame" \\js\dbpushgame.php /sc minute /st 12:40 /ed 31/12/2100";*/
-$command = "schtasks /create /sc minute /mo 2 /tn 'dbgamepush' /tr \\js\dbgamepush.php";
+$command = "schtasks /create /sc minute /mo 1 /tn \"dbgamepush\" /tr \\js\dbgamepush.php";
 $output = shell_exec($command);
-echo $output;
+echo "output is ".$output;
 }
 catch(Exception $e) 
 {
 	die($e);
 }
-echo 'success!';
+echo "success!";
 ?>
 
 </body>
