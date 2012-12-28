@@ -29,9 +29,9 @@ ignore_user_abort(true);//if caller closes the connection (if initiating with cU
 set_time_limit(0);
 //no of games to generate
 $limit = 480;
-$hLock=fopen(__FILE__.".lock", "w+");
+/*$hLock=fopen(__FILE__.".lock", "w+");
 if(!flock($hLock, LOCK_EX | LOCK_NB))
-    die("Already running. Exiting...");
+    die("Already running. Exiting...");*/
 while(true) 
 {
 $sql3 = "TRUNCATE TABLE games";
@@ -58,9 +58,9 @@ $conn->query($sql3);
     }
 	sleep(10);
 }
-flock($hLock, LOCK_UN);
+/*flock($hLock, LOCK_UN);
 fclose($hLock);
-unlink(__FILE__.".lock");
+unlink(__FILE__.".lock");*/
 ?>
 </body>
 </html>
