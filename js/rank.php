@@ -38,7 +38,9 @@
 	$sec = date('s');
 	$res = ( $min *60 + $sec ) %180;   
 	$time=180-$res;
-	echo 'document.getElementById("timer_div").innerHTML = 60';
+	print '<script type="text/javascript"';
+	print 'document.getElementById("timer_div").innerHTML = 60';
+	print '</script>';
 	/*print '<script src="count.js"> </script>';*/
     try 
 	{
