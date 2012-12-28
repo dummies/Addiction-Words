@@ -28,7 +28,7 @@ $conn->query($sql1);*/
 ignore_user_abort(true);//if caller closes the connection (if initiating with cURL from another PHP, this allows you to end the calling PHP script without ending this one)
 set_time_limit(0);
 //no of games to generate
-$limit = 10;
+$limit = 480;
 $hLock=fopen(__FILE__.".lock", "w+");
 if(!flock($hLock, LOCK_EX | LOCK_NB))
     die("Already running. Exiting...");

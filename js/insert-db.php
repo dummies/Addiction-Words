@@ -15,8 +15,8 @@
     }
 //$sql1 = "CREATE TABLE scoreboard( name VARCHAR(30), score int)";
 //$conn->query($sql1);
-//$sql3 = "TRUNCATE TABLE scoreboard";
-//$conn->query($sql3);
+$sql3 = "TRUNCATE TABLE scoreboard";
+$conn->query($sql3);
       try 
 	{
         $name = $_GET["name"];

@@ -29,7 +29,7 @@ var interval = setInterval(function() {
     {
         document.getElementById('timer_div').innerHTML = "Time's up";
         clearInterval(interval);
-		window.document.replace('http://word-addiction.azurewebsites.net/game.html');
+		location.replace("http://word-addiction.azurewebsites.net/game.html");
     }
 }, 1000);
 </script>
