@@ -12,17 +12,18 @@ $host = "us-cdbr-azure-east-b.cloudapp.net";
 	{
         die(var_dump($e));
     }
- $h =date('H');
+ /*$h =date('H');
  $m =date('i');
  //max time 23:59 
  $tmp = $h*20 + floor($m/3) ;
  //possible indexes , 1 2 3... 
  //max index - 23*20 + (59) /3 = 460 +19 =479 ;
- $tmp = ($tmp-1)*10 +1 ;
+ $tmp = ($tmp-1)*10 +1 ;*/
  //indexes  , 1 11 21 31..... ..max = 4781
 /* print '<script>';
  print 'console.log("'.$tmp.'")';
  print '</script>';*/
+ $tmp =211;
  try
  {
 $sqlq = "SELECT * FROM games WHERE id = ?";
