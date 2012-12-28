@@ -30,8 +30,12 @@ $sqlq = "SELECT * FROM games WHERE id = ?";
 $stmt = $conn->prepare($sqlq);
 $stmt->bindValue(1, $tmp);
 $result =$stmt->execute();
-if(count($result) >0) 
-echo $result['seq'];
+$registrants = $result->fetchAll();
+if(count($registrants) > 0) 
+{
+echo "fuck me";
+echo $registrants['seq'];
+}
 else
 echo "no data fetched";
 //sleep time would be 23 hr 59 mins ... => 23*60*60+59*60 = 4971540 seconds
