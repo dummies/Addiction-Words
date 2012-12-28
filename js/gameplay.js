@@ -239,7 +239,7 @@ function init() {
 	//all initlization stuff
 	loadwords();
 	loadpuzzle();
-	cleardb();
+//	cleardb();
 	name = window.localStorage.getItem('name');
 	document.onselectstart = function(){ return false; }
 	var xhr = new XMLHttpRequest();

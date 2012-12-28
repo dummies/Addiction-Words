@@ -1,13 +1,8 @@
+<?php  set_time_limit(0); ?>
 <html>
 <head>
 
 <Title>Player board</Title>
-<?php
-$min = date('i');
-$sec = date('s');
-$res = ( $min *60 + $sec ) %180;   
-$time=180-$res;
-?>
 <style type="text/css">
     body { background-color: #fff; border-top: solid 10px #000;
         color: #333; font-size: .85em; margin: 20; padding: 20;
@@ -21,18 +16,6 @@ $time=180-$res;
     th { font-size: 1.2em; text-align: left; border: none; padding-left: 0; }
     td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
 </style>
-<script>
-var seconds_left = '<?php echo $time ?>';
-var interval = setInterval(function() {
-    document.getElementById('timer_div').innerHTML = --seconds_left;
-    if (seconds_left <= 0)
-    {
-        document.getElementById('timer_div').innerHTML = "Time's up";
-        clearInterval(interval);
-		location.replace("http://word-addiction.azurewebsites.net/game.html");
-    }
-}, 1000);
-</script>
 </head>
 <body>
 <h1>Player board</h1>
@@ -42,8 +25,6 @@ var interval = setInterval(function() {
 <label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0080FF;position:relative ; left: +100px;"></label>
 </div>
 <br/>
-
-
 
 <?php
     // DB connection info
@@ -99,9 +80,15 @@ var interval = setInterval(function() {
 	{
         echo "<h3>No one is currently registered.</h3>";
     }
-	sleep(10);
-	//$sql3 = "TRUNCATE TABLE scoreboard";
-   // $conn->query($sql3);
+	$min = date('i');
+	$sec = date('s');
+	$res = ( $min *60 + $sec ) %180;
+	$wt = 130 - $res ;
+	if($wt >0) {
+	 sleep($wt);
+	 $sql3 = "TRUNCATE TABLE scoreboard";
+     $conn->query($sql3);
+	}
 ?>
 </body>
 </html>
