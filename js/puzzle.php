@@ -20,9 +20,9 @@ $host = "us-cdbr-azure-east-b.cloudapp.net";
  //max index - 23*20 + (59) /3 = 460 +19 =479 ;
  $tmp = ($tmp-1) *10 +1 ;
  //indexes  , 1 11 21 31..... ..max = 4781
- print '<script>';
+/* print '<script>';
  print 'console.log("'.$tmp.'")';
- print '</script>';
+ print '</script>';*/
  try
  {
  $sqlq = "SELECT * FROM games WHERE id=".$tmp ;
