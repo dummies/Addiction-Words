@@ -26,20 +26,25 @@ $host = "us-cdbr-azure-east-b.cloudapp.net";
  $tmp =211;
  try
  {
-$sqlq = "SELECT * FROM games WHERE id = ?";
-$stmt = $conn->prepare($sqlq);
-$stmt->bindValue(1, $tmp);
-$result =$stmt->execute();
-
-if(count($result) > 0) 
+$sqlq = "SELECT * FROM games";
+/*$stmt = $conn->prepare($sqlq);
+$stmt->bindValue(1, $tmp);*/
+//$result =$stmt->execute();
+$stmt = $conn->query($sqlq);
+$registrants = $stmt->fetchAll(); 
+if(count($registrants) > 0) 
 {
-echo "fuck me";
+/*echo "fuck me";
 echo $result['id'];
 echo $result['seq'];
-echo "fucked";
+echo "fucked";*/
+ foreach($registrants as $registrant) 
+		{
+      if($tmp == $registrant['id'])
+      echo $registrant['seq'];
+		}
 }
-else
-echo "no data fetched";
+
 //sleep time would be 23 hr 59 mins ... => 23*60*60+59*60 = 4971540 seconds
 }
  catch(Exception $e) 
