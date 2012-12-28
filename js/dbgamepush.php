@@ -49,7 +49,7 @@ $conn->query($sql3);
     {
         die(var_dump($e));
     }
-	sleep(120);
+	sleep(10);
 }
 ?>
 </body>
