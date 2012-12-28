@@ -24,6 +24,25 @@
 <label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0080FF;position:relative ; left: +100px;"></label>
 </div>
 <br/>
+<?php
+$min = date('i');
+$sec = date('s');
+$res = ( $min *60 + $sec ) %180;   
+$time=180-$res;
+?>
+<script>
+var seconds_left = <?php $time ?> ;
+var interval = setInterval(function() {
+    document.getElementById('timer_div').innerHTML = --seconds_left;
+    if (seconds_left <= 0)
+    {
+        document.getElementById('timer_div').innerHTML = "Time's up";
+        clearInterval(interval);
+		submitgame();
+    }
+}, 1000);
+</script>
+
 
 <?php
     // DB connection info
@@ -34,10 +53,7 @@
     $pwd = "ee7246b9";
     $db = "wordaddABbVVe2ev";
     // Connect to database.
-	$min = date('i');
-	$sec = date('s');
-	$res = ( $min *60 + $sec ) %180;   
-	$time=180-$res;
+	
 	echo '<script type="text/javascript"';
 	echo 'document.getElementById("timer_div").innerHTML = 60';
 	echo '</script>';
