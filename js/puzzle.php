@@ -25,29 +25,13 @@ $host = "us-cdbr-azure-east-b.cloudapp.net";
  print '</script>';*/
  try
  {
-$sqlq = "SELECT * FROM games WHERE `id` = {$tmp}";
-$stmt = $conn->prepare($sqlq);
-/*if($stmt)
-{
-$stmt->bind_param("i", $tmp)*/;
- $stmt2 =$stmt->execute();
+$sqlq = "SELECT * FROM games WHERE id = $tmp";
 
- //sleep time would be 23 hr 59 mins ... => 23*60*60+59*60 = 4971540 seconds
- 
- $registrants = $stmt2->fetchAll(); 
- if(count($registrants) > 0)
-	{
-		$ans = $registrants['seq'];
-		echo $ans;
-	}
-	else {
-		echo "no data fetched.....";	
-	}
+$result =$conn->query($sqlq);
+
+echo $result['seq'];
+//sleep time would be 23 hr 59 mins ... => 23*60*60+59*60 = 4971540 seconds
 }
-//else {
-//	die($stmt);
-//}
-// }
  catch(Exception $e) 
  {
 	 die($e);
