@@ -26,15 +26,20 @@ $host = "us-cdbr-azure-east-b.cloudapp.net";
  try
  {
  $sqlq = "SELECT * FROM games WHERE id=1";
- 
  //sleep time would be 23 hr 59 mins ... => 23*60*60+59*60 = 4971540 seconds
- 
- $res = $conn->query($sqlq);
- $ans = $res['seq'];
+ $stmt = $conn->query($sqlq);
+ $registrants = $stmt->fetchAll(); 
+ if(count($registrants) > 0)
+	{
+		$ans = $registrants['seq'];
+		echo $ans;
+	}
+	else {
+		echo "no data fetched.....";	
+	}
  }
  catch(Exception $e) 
  {
 	 die($e);
  }
- echo $ans;
 ?>
