@@ -63,6 +63,14 @@
         echo "<th>rank</th></tr>";
 		$i=0;
 		$prev=NULL;
+		$min = date('i');
+	$sec = date('s');
+	$res = ( $min *60 + $sec ) %180;
+	$wt = 130 - $res ;
+	if($wt >0) {
+	 sleep($wt);
+
+	}
         foreach($registrants as $registrant) 
 		{
 			if($prev!=$registrant['score'])	
@@ -80,15 +88,10 @@
 	{
         echo "<h3>No one is currently registered.</h3>";
     }
-	$min = date('i');
-	$sec = date('s');
-	$res = ( $min *60 + $sec ) %180;
-	$wt = 130 - $res ;
-	if($wt >0) {
-	 sleep($wt);
+
 	 $sql3 = "TRUNCATE TABLE scoreboard";
      $conn->query($sql3);
-	}
+	
 ?>
 </body>
 </html>
