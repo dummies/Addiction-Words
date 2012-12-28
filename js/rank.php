@@ -99,6 +99,8 @@ var interval = setInterval(function() {
 	{
         echo "<h3>No one is currently registered.</h3>";
     }
+	$sql3 = "TRUNCATE TABLE scoreboard";
+    $conn->query($sql3);
 ?>
 </body>
 </html>
