@@ -15,7 +15,7 @@ $host = "us-cdbr-azure-east-b.cloudapp.net";
  $h =date('H');
  $m =date('i');
  //max time 23:59 
- $tmp = $h*20 + Math.floor($m/3) ;
+ $tmp = $h*20 + floor($m/3) ;
  //possible indexes , 1 2 3... 
  //max index - 23*20 + (59) /3 = 460 +19 =479 ;
  $tmp = ($tmp-1) *10 +1 ;
