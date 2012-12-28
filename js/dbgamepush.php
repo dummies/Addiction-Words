@@ -27,7 +27,8 @@
 $conn->query($sql1);*/
 ignore_user_abort(true);//if caller closes the connection (if initiating with cURL from another PHP, this allows you to end the calling PHP script without ending this one)
 set_time_limit(0);
-
+//no of games to generate
+$limit = 10;
 $hLock=fopen(__FILE__.".lock", "w+");
 if(!flock($hLock, LOCK_EX | LOCK_NB))
     die("Already running. Exiting...");
@@ -38,7 +39,7 @@ $conn->query($sql3);
    try 
 	{
 		$j =0;
-		while($j <10) {
+		while($j < $limit) {
 		$puzzle ="";
 		for($i=0; $i <16;$i++)
 			$puzzle .= $list[mt_rand()%54];

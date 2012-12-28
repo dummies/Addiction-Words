@@ -1,22 +1,31 @@
 <?php
-$puzzle = "";
-//$vowels=array("A","E","I","O","U");
-//$conso =array("B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z");
-$list=array('E','E','E','E','E','E','T','T','T','A','A','A','O','O','O','I','I','I','N','N','N','S','S','S','S','R','R','R','H','H','L','L','D','D','D','D','C','C','U','U','M','M','F','P','G','W','Y','B','V','K','X','J','Q','Z');
-
-
-/*$high=array("E","T","A","O","I","N");
-$medium=array("S","R","H","L","D","C","U","M","F","P");
-$low=array("G","W","Y","B","V","K","X","J","Q","Z");
-$len1=strlen($high)-1;
-$len2=strlen($medium)-1;
-$len3=strlen($low)-1;*/
-for($i=0; $i <16;$i++)
-{	
-	$puzzle .= $list[mt_rand()%54];
-}
-//completed generation 
-
-echo $puzzle;
-
+$host = "us-cdbr-azure-east-b.cloudapp.net";
+    $user = "bcd2949c8baf7b";
+    $pwd = "ee7246b9";
+    $db = "wordaddABbVVe2ev";
+    try 
+	{
+        $conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
+        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    }
+    catch(Exception $e)
+	{
+        die(var_dump($e));
+    }
+ $h =date('H');
+ $m =date('i');
+ //max time 23:59 
+ $tmp = $h*20 + Math.floor($m/3) ;
+ //possible indexes , 1 2 3... 
+ //max index - 23*20 + (59) /3 = 460 +19 =479 ;
+ $tmp = ($tmp-1) *10 +1 ;
+ //indexes  , 1 11 21 31..... ..max = 4781
+ $sqlq = "select * from games where id=".$tmp ;
+ 
+ //sleep time would be 23 hr 59 mins ... => 23*60*60+59*60 = 4971540 seconds
+ 
+ $res = $conn->query(sqlq);
+ $game = $res->fetchAll(); 
+ $ans = $game['seq'];
+ echo $ans;
 ?>
