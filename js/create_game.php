@@ -9,8 +9,10 @@
 <?php
 try
 {
-$command ="schtasks /create /tn create_game'C:\sites\Addiction-Words\js\create_game.php' /sc daily /st 23:00 /ed 31/12/2100";
-shell_exec($command);
+/*$command ="schtasks /create /tn "dbpushgame" \\js\dbpushgame.php /sc minute /st 12:40 /ed 31/12/2100";*/
+$command = "schtasks /create /sc minute /mo 2 /tn 'dbgamepush' /tr \\js\dbgamepush.php";
+$output = shell_exec($command);
+echo $output;
 }
 catch(Exception $e) 
 {
