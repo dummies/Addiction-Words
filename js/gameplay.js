@@ -229,10 +229,17 @@ function decrypt(n) {
 	return parseInt((n/4)+1)*10+(n%4)+1;
 }
 
+function cleardb() {
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'js/clearlb.php',true);
+	xhr.send(null);
+	console.log(xhr.responseText);
+}
 function init() {
 	//all initlization stuff
 	loadwords();
 	loadpuzzle();
+	cleardb();
 	name = window.localStorage.getItem('name');
 	document.onselectstart = function(){ return false; }
 	var xhr = new XMLHttpRequest();

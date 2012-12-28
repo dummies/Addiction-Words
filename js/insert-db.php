@@ -1,3 +1,4 @@
+//used to insert data into leader board.
 <?php
 	
 	$host = "us-cdbr-azure-east-b.cloudapp.net";
@@ -15,7 +16,8 @@
     }
 //$sql1 = "CREATE TABLE scoreboard( name VARCHAR(30), score int)";
 //$conn->query($sql1);
-      try 
+
+   try 
 	{
         $name = $_GET["name"];
         $score = $_GET['score'];
