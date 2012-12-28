@@ -30,7 +30,10 @@ $sqlq = "SELECT * FROM games WHERE id = ?";
 $stmt = $conn->prepare($sqlq);
 $stmt->bindValue(1, $tmp);
 $result =$stmt->execute();
+if(count($result) >0) 
 echo $result['seq'];
+else
+echo "no data fetched";
 //sleep time would be 23 hr 59 mins ... => 23*60*60+59*60 = 4971540 seconds
 }
  catch(Exception $e) 
