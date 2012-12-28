@@ -29,7 +29,7 @@ $host = "us-cdbr-azure-east-b.cloudapp.net";
  
  //sleep time would be 23 hr 59 mins ... => 23*60*60+59*60 = 4971540 seconds
  
- $res = $conn->query(sqlq);
+ $res = $conn->query($sqlq);
  $ans = $res['seq'];
  }
  catch(Exception $e) 
