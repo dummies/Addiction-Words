@@ -22,32 +22,6 @@ echo "dbpushe";
 	{
         die(var_dump($e));
     }
-/*$sql1 = "CREATE TABLE games(id INT NOT NULL AUTO_INCREMENT, 
-			PRIMARY KEY(id),seq VARCHAR(16))";
-$conn->query($sql1);*/
-$sql3 = "TRUNCATE TABLE games";
-$conn->query($sql3);
-$list=array('E','E','E','E','E','E','T','T','T','A','A','A','O','O','O','I','I','I','N','N','N','S','S','S','S','R','R','R','H','H','L','L','D','D','D','D','C','C','U','U','M','M','F','P','G','W','Y','B','V','K','X','J','Q','Z');
-   try 
-	{
-		$j =0;
-		while($j <480) {
-		$puzzle ="";
-		for($i=0; $i <16;$i++)
-			$puzzle .= $list[mt_rand()%54];
-		$sql_insert = "INSERT INTO games(seq) 
-                   VALUES (?)";
-        $stmt = $conn->prepare($sql_insert);
-        $stmt->bindValue(1, $puzzle);
-        $stmt->execute();
-		$j++;
-		}
-        
-    }
-    catch(Exception $e)
-    {
-        die(var_dump($e));
-    }
 	$sql_select = "SELECT * FROM games order by id";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
