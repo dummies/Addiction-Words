@@ -28,6 +28,7 @@
         $stmt->bindValue(2, $score);
         $stmt->execute();
     }
+	
     catch(Exception $e)
     {
         die(var_dump($e));
