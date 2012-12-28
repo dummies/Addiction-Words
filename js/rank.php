@@ -22,7 +22,7 @@ $time=180-$res;
     td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
 </style>
 <script>
-var seconds_left = <?php $time ?> ;
+var seconds_left = '<?php echo $time ?>';
 var interval = setInterval(function() {
     document.getElementById('timer_div').innerHTML = --seconds_left;
     if (seconds_left <= 0)
