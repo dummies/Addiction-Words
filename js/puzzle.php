@@ -25,9 +25,13 @@ $host = "us-cdbr-azure-east-b.cloudapp.net";
  print '</script>';*/
  try
  {
- $sqlq = "SELECT * FROM games WHERE id='1'";
+$sqlq = "SELECT * FROM games WHERE id=?";
+$stmt = $conn->prepare($sqlq);
+$stmt->bind_param("i", $tmp);
+$stmt->execute();
+
  //sleep time would be 23 hr 59 mins ... => 23*60*60+59*60 = 4971540 seconds
- $stmt = $conn->query($sqlq);
+ 
  $registrants = $stmt->fetchAll(); 
  if(count($registrants) > 0)
 	{
