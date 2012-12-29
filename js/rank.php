@@ -54,9 +54,9 @@
     if(count($registrants) > 0)
 	{
         echo "<table>";
-        echo "<tr><th>Rank</th>";
-        echo "<th><th>Gamer</th></th>";
-        echo "<th>Score</th></tr>";
+        echo "<tr><th color=#408000>Rank</th>";
+        echo "<th color=#408000>Gamer</th>";
+        echo "<th><th color=#408000>Score</th></th></tr>";
 		$i=0;
 		$prev=NULL;
         foreach($registrants as $registrant) 
@@ -68,7 +68,7 @@
 			}
             echo "<tr><td>".$i."</td>";
 			echo "<td>".$registrant['name']."</td>";
-            echo "<td>".$registrant['score']."</td></tr>";
+            echo "<td><td>".$registrant['score']."</td></td></tr>";
         }
         echo "</table>";
     } 
