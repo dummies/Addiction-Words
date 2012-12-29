@@ -1,49 +1,37 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
 <head>
-<meta charset="utf-8">
-<title>Addiction</title>
+<title>wordtrix</title>
+<meta charset="utf-8"/>
+<link href="styles/coolMenu.css" rel="stylesheet" type="text/css" media="screen"/>
+<script type="text/javascript" src="js/modernizr-1.6.min.js"></script>
 <link href="styles/check_cs6.css" rel="stylesheet" type="text/css">
-<!--fb -stuff-->
-<div id="fb-root"></div>
 <script src="js/fb.js"> </script>
 <script src="//connect.facebook.net/en_US/all.js"></script>
 </head>
+<body style="margin-top:10px">
 
-<body>
-<div id="container">
-    <div id="header">
-     <!--   <h1>Addiciton</h1>-->
-     <a href="http://word-addiction.azurewebsites.net/">
-        <img style="background-color:transparent;float:left" src="images/logo1.PNG" width="289" height="55">
-        </a>
-      <p>&nbsp;</p>
-        <ul>
-            <li><a href="game.html">game</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="#">others</a></li>
-        </ul>
-    </div>
-  <div id="user" >
-    <label style="text-align:end;font-size:12px;"> Login with facebook </label>
-    <br/>
-   <div id="login">
- <p><button onClick="loginUser();">Login</button></p>
- </div>
- <div id="logout">
-   <p><button  onClick="FB.logout();">Logout</button></p>
- </div>
-  <div id="user-info"></div>
-    <input name="play" onClick="location.href = 'game.html' " type="submit" id="play" value="Play now">
-  </div>
+	<div class="container_16" style="background-color:#228c4c; height:80px" >
+                <a href="http://www.wordtrix.in/">
+        <img style="background-color:transparent;float:left; margin-top:12px" src="images/logo1.PNG" width="289" height="55">
+    </a>
+		<div align="right" style="margin-left: 700px">
+		<ul id="coolMenu" style="margin-top:30px; margin-left:100px">
+		
+			<li id="login"><a href="#" onClick="loginUser();">login</a></li>
+			<li id="user-info">
+				<a href="#">Hi player</a>
+				<ul class="noJS">
+					<li><a href="#">profile</a></li>
+					<li><a href="#">others</a></li>
+					<li id="logout"><a href="#" onClick="FB.logout();">logout</a></li>
+				</ul>
+			</li>
+		</ul>
+		
+		</div>
+	</div>
 
-</div>
-<style>
-  body.connected #login { display: none; }
-  body.connected #logout { display: block; }
-  body.not_connected #login { display: block; }
-  body.not_connected #logout { display: none; }
-</style>
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>
