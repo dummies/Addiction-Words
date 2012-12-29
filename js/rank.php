@@ -19,7 +19,7 @@
 <body>
 <?php  set_time_limit(0); ?>
  <img style="background-color:transparent;float:left" src="/images/board.PNG" width="100" height="100">
-<label style="font-size:30px;color:#008055;"  > Gamer Board </label> </p></br>
+<br><br><br><label style="font-size:30px;color:#008055;"  > Gamer Board </label> </br></br></br>
 <br/>
 <?php
    
