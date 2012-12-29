@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<style type="text/css">
+<?php /*?><style type="text/css">
     body { background-color: #fff; border-top: solid 10px #000;
         color: #333; font-size: .85em; margin: 20; padding: 20;
         font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
@@ -13,15 +13,13 @@
     table { margin-top: 0.75em; }
     th { font-size: 1.2em; text-align: left; border: none; padding-left: 0; }
     td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
-</style>
+</style><?php */?>
 
 </head>
 <body>
 <?php  set_time_limit(0); ?>
-<div>$image = "images/board.PNG";  
-
-Echo "<img src=".$image." Style=width:50px;height:50px;>"
-<h1>Gamer Board</h1></div>
+ <img style="background-color:transparent;float:left" src="images/board.PNG" width="100" height="100">
+<label style="font-size:30px;color:#90ee90;"  > Gamer Board </label> </p></br>
 <br/>
 <?php
    
