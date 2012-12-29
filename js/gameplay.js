@@ -3,7 +3,7 @@ var val =false;
 var tab = [false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false];
 var tdarray =[] ,foundwordsarr = [];
 var str =new String("");
-var site_url = "http://word-addiction.azurewebsites.net/js/rank.php";
+var site_url = "http://www.wordtrix.in/js/gamerboard.php";
 var words;
 var name;
 var seconds_left ;
@@ -199,14 +199,14 @@ var xhr = new XMLHttpRequest();
 xhr.open('GET', 'js/insert-db.php?name='+name+'&score='+score,false);
 xhr.send(null);
 console.log(xhr.responseText);
-window.location.href = "js/rank.php";
+window.location.href = "js/gamerboard.php";
 //setTimeout('moveurl()',200);
 
 }
 
 
 function moveurl() {
-window.location.href = "js/rank.php";
+window.location.href = "js/gamerboard.php";
 }
 
 
