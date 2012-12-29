@@ -14,24 +14,17 @@
     th { font-size: 1.2em; text-align: left; border: none; padding-left: 0; }
     td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
 </style>
-<script>
-var seconds_left = <?php $min = date('i'); $sec = date('s'); $res = ( $min *60 + $sec ) %180; $left = 180 -$res; echo $left;?>;
-var interval = setInterval(function() {
-    document.getElementById('timer_div').innerHTML = --seconds_left;
-    if (seconds_left <= 0)
-    {
-        document.getElementById('timer_div').innerHTML = "Time's up";
-        clearInterval(interval);
-		window.location ="http://word-addiction.azurewebsites.net/game.html" ;
-    }
-}, 1000);
-</script>
+
 </head>
 <body>
 <?php  set_time_limit(0); ?>
-<h1>Gamer Board</h1>
+<div>$image = "images/board.PNG";  
+
+Echo "<img src=".$image." Style=width:50px;height:50px;>"
+<h1>Gamer Board</h1></div>
 <br/>
 <?php
+   
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
     //using the values you retrieved earlier from the portal.
@@ -62,11 +55,10 @@ var interval = setInterval(function() {
     $registrants = $stmt->fetchAll(); 
     if(count($registrants) > 0)
 	{
-        echo "<h2>People who are registered:</h2>";
         echo "<table>";
-        echo "<tr><th>Name</th>";
-        echo "<th>score</th>";
-        echo "<th>rank</th></tr>";
+        echo "<tr><th>Rank</th>";
+        echo "<th>Gamer</th>";
+        echo "<th>Score</th></tr>";
 		$i=0;
 		$prev=NULL;
         foreach($registrants as $registrant) 
@@ -77,7 +69,6 @@ var interval = setInterval(function() {
 			$prev=$registrant['score'];
 			}
             echo "<tr><td>".$i."</td>";
-            echo "fbpic";
 			echo "<td>".$registrant['name']."</td>";
             echo "<td>".$registrant['score']."</td></tr>";
         }
