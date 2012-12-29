@@ -14,7 +14,7 @@
     th { font-size: 1.2em; text-align: left; border: none; padding-left: 0; }
     td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
 </style>
-<script>
+/*<script>
 var seconds_left = <?php $min = date('i'); $sec = date('s'); $res = ( $min *60 + $sec ) %180; $left = 180 -$res; echo $left;?>;
 var interval = setInterval(function() {
     document.getElementById('timer_div').innerHTML = --seconds_left;
@@ -25,17 +25,12 @@ var interval = setInterval(function() {
 		window.location ="http://word-addiction.azurewebsites.net/game.html" ;
     }
 }, 1000);
-</script>
+</script>*/ 
 </head>
 <body>
 <?php  set_time_limit(0); ?>
 <h1>Gamer Board</h1>
-<div>
-<label style="font-size:24px;color:#004080;"  > Time left </label>
-<label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0080FF;position:relative ; left: +100px;"></label>
-</div>
 <br/>
-
 <?php
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
@@ -82,8 +77,9 @@ var interval = setInterval(function() {
 			$prev=$registrant['score'];
 			}
             echo "<tr><td>".$i."</td>";
-            echo "<td>".$registrant['name']."</td>";
-            echo "<td>".$registrant['name']."</td></tr>";
+            echo "fbpic";
+			echo "<td>".$registrant['name']."</td>";
+            echo "<td>".$registrant['score']."</td></tr>";
         }
         echo "</table>";
     } 
