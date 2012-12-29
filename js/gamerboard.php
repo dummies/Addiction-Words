@@ -30,7 +30,7 @@ var interval = setInterval(function() {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:26px;color:#408000;"  > bonus : </label></p>
 </div>
 <iframe src="http://www.wordtrix.in/js/rank.php" name="gamer board" frameborder="0" height="800" width="650" style="position: absolute; top: 0px; left: 700px;"></iframe>
-<iframe src="http://www.wordtrix.in/js/unfound.php" name="unfound words" frameborder="0" height="400" width="400" style="position: absolute; top: 0px; left: 100px;top: 700"></iframe>
+<iframe src="http://www.wordtrix.in/js/unfound.php" name="unfound words" frameborder="0" height="400" width="400" style="position: absolute; top: 0px; left: 100px;top: 700px;"></iframe>
 
 </body>
 </html>
