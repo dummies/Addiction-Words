@@ -71,12 +71,12 @@ body {
     float: left;
 }
 #header ul {
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	position: absolute;
+	right: 374px;
+	bottom: -33px;
 }
 #main_text {
 	background-color: #FFF;
