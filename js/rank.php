@@ -1,4 +1,3 @@
-<?php  set_time_limit(0); ?>
 <html>
 <head>
 
@@ -16,8 +15,28 @@
     th { font-size: 1.2em; text-align: left; border: none; padding-left: 0; }
     td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
 </style>
+<?php 
+$min = date('i');
+$sec = date('s');
+
+$res = ( $min *60 + $sec ) %180;
+$left = 180 -$res;
+?>
+<script>
+var seconds_left = <?php $left ?>
+var interval = setInterval(function() {
+    document.getElementById('timer_div').innerHTML = --seconds_left;
+    if (seconds_left <= 0)
+    {
+        document.getElementById('timer_div').innerHTML = "Time's up";
+        clearInterval(interval);
+		window.document.href ="http://word-addiction.azurewebsites.net/game.html" ;
+    }
+}, 1000);
+</script>
 </head>
 <body>
+<?php  set_time_limit(0); ?>
 <h1>Player board</h1>
 <p>Below are the players who made it to top of player board <strong>Congrats</strong>! </p>
 <div>
@@ -63,14 +82,6 @@
         echo "<th>rank</th></tr>";
 		$i=0;
 		$prev=NULL;
-		$min = date('i');
-	$sec = date('s');
-	$res = ( $min *60 + $sec ) %180;
-	$wt = 130 - $res ;
-	if($wt >0) {
-	 sleep($wt);
-
-	}
         foreach($registrants as $registrant) 
 		{
 			if($prev!=$registrant['score'])	
@@ -88,7 +99,14 @@
 	{
         echo "<h3>No one is currently registered.</h3>";
     }
-
+	/*$min = date('i');
+	$sec = date('s');
+	$res = ( $min *60 + $sec ) %180;
+	$wt = 130 - $res ;
+	if($wt >0) {
+	 sleep($wt);
+	}*/
+	sleep(5);
 	 $sql3 = "TRUNCATE TABLE scoreboard";
      $conn->query($sql3);
 	
