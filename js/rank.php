@@ -63,6 +63,7 @@ var interval = setInterval(function() {
     // Insert registration info
     
     // Retrieve data
+	sleep(5);
     $sql_select = "SELECT * FROM scoreboard order by score desc";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
@@ -99,7 +100,6 @@ var interval = setInterval(function() {
 	if($wt >0) {
 	 sleep($wt);
 	}*/
-	sleep(5);
 	 $sql3 = "TRUNCATE TABLE scoreboard";
      $conn->query($sql3);
 	
