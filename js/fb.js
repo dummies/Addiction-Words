@@ -67,6 +67,7 @@ function updateUserInfo(response)
        document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + 'hello ' + response.name;
 	   //store user details.
 	 window.localStorage.setItem("name",response.name);
+	 window.localStorage.setItem("user_img_fb",response.id);
      });
 	 
 }
