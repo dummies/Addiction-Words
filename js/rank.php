@@ -66,9 +66,9 @@
 			$i=$i+1;
 			$prev=$registrant['score'];
 			}
-            echo "<tr><td>".$i."</td>";
-			echo "<td>".$registrant['name']."</td>";
-            echo "<td><td>".$registrant['score']."</td></td></tr>";
+            echo "<tr><th>".$i."</th>";
+			echo "<th>".$registrant['name']."</th>";
+            echo "<th><th>".$registrant['score']."</th></th></tr>";
         }
         echo "</table>";
     } 

@@ -22,9 +22,7 @@ var interval = setInterval(function() {
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:24px;color:#408000;"  > next game : </label>
 <label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#408000;position:relative ; left: +100px;"></label>
-<div>
- <img style="background-color:transparent;float:left" src="/images/stats.PNG" width="100" height="100">
-<br><br><br><label style="font-size:30px;color:#008055;"  > Gamer Statistics </label> </br></br></br>
+<p><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#008055;"  > Gamer Statistics </label> </br></br></p>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:26px;color:#408000;"  > gamer score : </label></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:26px;color:#408000;"  > total words : </label></p>
@@ -32,6 +30,7 @@ var interval = setInterval(function() {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:26px;color:#408000;"  > bonus : </label></p>
 </div>
 <iframe src="http://www.wordtrix.in/js/rank.php" name="gamer board" frameborder="0" height="800" width="650" style="position: absolute; top: 0px; left: 700px;"></iframe>
+<iframe src="http://www.wordtrix.in/js/unfound.php" name="unfound words" frameborder="0" height="400" width="400" style="position: absolute; top: 0px; left: 100px;top: 700"></iframe>
 
 </body>
 </html>
