@@ -1,7 +1,6 @@
 <html>
 <head>
 
-<Title>Player board</Title>
 <style type="text/css">
     body { background-color: #fff; border-top: solid 10px #000;
         color: #333; font-size: .85em; margin: 20; padding: 20;
@@ -30,8 +29,7 @@ var interval = setInterval(function() {
 </head>
 <body>
 <?php  set_time_limit(0); ?>
-<h1>Player board</h1>
-<p>Below are the players who made it to top of player board <strong>Congrats</strong>! </p>
+<h1>Gamer Board</h1>
 <div>
 <label style="font-size:24px;color:#004080;"  > Time left </label>
 <label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0080FF;position:relative ; left: +100px;"></label>
@@ -83,9 +81,9 @@ var interval = setInterval(function() {
 			$i=$i+1;
 			$prev=$registrant['score'];
 			}
-            echo "<tr><td>".$registrant['name']."</td>";
-            echo "<td>".$registrant['score']."</td>";
-            echo "<td>".$i."</td></tr>";
+            echo "<tr><td>".$i."</td>";
+            echo "<td>".$registrant['name']."</td>";
+            echo "<td>".$registrant['name']."</td></tr>";
         }
         echo "</table>";
     } 
