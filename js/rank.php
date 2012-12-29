@@ -23,7 +23,7 @@ var interval = setInterval(function() {
     {
         document.getElementById('timer_div').innerHTML = "Time's up";
         clearInterval(interval);
-		window.document.href ="http://word-addiction.azurewebsites.net/game.html" ;
+		window.location ="http://word-addiction.azurewebsites.net/game.html" ;
     }
 }, 1000);
 </script>
@@ -100,8 +100,9 @@ var interval = setInterval(function() {
 	if($wt >0) {
 	 sleep($wt);
 	}*/
+/*	sleep(2);
 	 $sql3 = "TRUNCATE TABLE scoreboard";
-     $conn->query($sql3);
+     $conn->query($sql3);*/
 	
 ?>
 </body>
