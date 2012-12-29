@@ -55,7 +55,7 @@
 	{
         echo "<table>";
         echo "<tr><th>Rank</th>";
-        echo "<th>Gamer</th>";
+        echo "<th><th>Gamer</th></th>";
         echo "<th>Score</th></tr>";
 		$i=0;
 		$prev=NULL;
