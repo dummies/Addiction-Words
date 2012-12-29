@@ -15,15 +15,8 @@
     th { font-size: 1.2em; text-align: left; border: none; padding-left: 0; }
     td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
 </style>
-<?php 
-$min = date('i');
-$sec = date('s');
-
-$res = ( $min *60 + $sec ) %180;
-$left = 180 -$res;
-?>
 <script>
-var seconds_left = <?php $left ?>
+var seconds_left = <?php $min = date('i'); $sec = date('s'); $res = ( $min *60 + $sec ) %180; $left = 180 -$res; echo $left;?>
 var interval = setInterval(function() {
     document.getElementById('timer_div').innerHTML = --seconds_left;
     if (seconds_left <= 0)
