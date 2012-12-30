@@ -45,7 +45,7 @@
 	{
         $name = $_GET["name"];
         $score = $_GET['score'];
-        $sql_insert = "INSERT INTO scoreboard (name, score) 
+        $sql_insert = "INSERT INTO scores (Name, Score) 
                    VALUES (?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $name);
