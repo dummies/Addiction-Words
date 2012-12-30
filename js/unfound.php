@@ -15,7 +15,10 @@ echo "<table>";
         echo "<td style='color:#0000A0'>4 letters</td>";
         echo "<td style='color:#0000A0'>5 letters</td></tr>";
 		
-$boggle = $_GET["puzzle"];
+$boggle = "fxie
+           amlo
+           ewbx
+           astu";
 echo $boggle;
 $alphabet = str_split(str_replace(array("\n", " ", "\r"), "", strtolower($boggle)));
 $rows = array_map('trim', explode("\n", $boggle));
