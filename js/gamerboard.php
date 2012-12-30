@@ -27,7 +27,7 @@ var interval = setInterval(function() {
  <div style="background-color:#E7EBF2;height:auto;">
 	<div class="container_16" style="background-color:#004080; height:90px; opacity:0.8" >
     <a href="http://www.wordtrix.in/">
-        <img style="background-color:transparent;float:left" src="images/logo-final.png">
+        <img style="background-color:transparent;float:left" src="/images/logo-final.png">
     </a>
 		<div align="right" style="margin-left: 800px">  
 		<ul id="coolMenu" style="margin-top:40px;">
