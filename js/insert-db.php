@@ -41,9 +41,9 @@
    die(print_r($e));
 }
   $v1 = $_GET["name"];
-  $v2 = $_GET['score'];
+  $v2 = $_GET["score"];
    
-   $stmt3 = $conn->prepare("INSERT INTO #scores (Name,Score) VALUES (:var1, :var2)");
+   $stmt3 = $conn->prepare("INSERT INTO scores (Name,Score) VALUES (:var1, :var2)");
 
    if ($stmt3) {
       $stmt3->bindValue(1, $v1);
