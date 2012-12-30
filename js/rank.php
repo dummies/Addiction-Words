@@ -55,8 +55,8 @@
 	{
         echo "<table>";
         echo "<tr><td style='color:#0000A0'>Rank</td>";
-        echo "<td style='color:#0000A0'>Gamer</td>";
-        echo "<td style='color:#0000A0'>Score</th></td></tr>";
+        echo "<td style='color:#0000A0'>Gamer Name</td>";
+        echo "<td style='color:#0000A0'>Score</td></tr>";
 		$i=0;
 		$prev=NULL;
         foreach($registrants as $registrant) 
