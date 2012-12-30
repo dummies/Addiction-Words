@@ -1,4 +1,3 @@
-// JavaScript Document
 var val =false;
 var tab = [false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false];
 var tdarray =[] ,foundwordsarr = [];
@@ -30,7 +29,7 @@ function mousedown(td ) {
 	tdarray.push(td);
 	//console.log("mouse down");
 	}
-	
+
 	//alert(tmp);
 	//console.log(td);
 }
@@ -235,16 +234,11 @@ function cleardb() {
 	xhr.send(null);
 	console.log(xhr.responseText)
 }
-function loaduserstuff() {
- name = window.localStorage.getItem('name'); 
- document.getElementById("user_img").src = window.localStorage.getItem("user_img_fb");
-}
 function init() {
 	//all initlization stuff
 	loadwords();
 	loadpuzzle();
 	cleardb();
-	loaduserstuff();
 	document.onselectstart = function(){ return false; }
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', 'js/timer.php',false);
