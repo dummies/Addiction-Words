@@ -56,9 +56,11 @@
    die(print_r($e));
 }
 	sleep(5);
-    $sql_select = "SELECT * FROM scores order by score desc";
+    $sql_select = "SELECT * FROM scores order by Score desc";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
+	echo $registrants;
+	echo "<br/> I am fetching <br/> ";
     if(count($registrants) > 0)
 	{
         echo "<table>";
@@ -84,6 +86,8 @@
 	{
         echo "<h3>No one is currently registered.</h3>";
     }
+	
+	echo "<br/>I am closing<br/>";
 	/*$min = date('i');
 	$sec = date('s');
 	$res = ( $min *60 + $sec ) %180;
