@@ -234,10 +234,15 @@ function cleardb() {
 	xhr.send(null);
 	console.log(xhr.responseText)
 }
+function loaduserstuff() {
+ name = window.localStorage.getItem('name'); 
+ document.getElementById("user_img").src = window.localStorage.getItem("user_img_fb");
+}
 function init() {
 	//all initlization stuff
 	loadwords();
 	loadpuzzle();
+	loaduserstuff();
 	cleardb();
 	document.onselectstart = function(){ return false; }
 	var xhr = new XMLHttpRequest();
