@@ -65,6 +65,7 @@ function logoutUser() {
 	document.getElementById('user-info').style.display = 'block';
 	document.getElementById('user_photo').src = "images/def_male.jpg";
 	document.getElementById('user_photo').innerHTML="";
+	document.getElementById('user_name').innerHTML = 'Hi Player!';
 }
 function updateUserInfo(response) 
 {
