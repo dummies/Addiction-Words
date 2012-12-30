@@ -7,20 +7,16 @@
 
 <body>
 <?php
-$host = "us-cdbr-azure-east-b.cloudapp.net";
-    $user = "bcd2949c8baf7b";
-    $pwd = "ee7246b9";
-    $db = "wordaddABbVVe2ev";
-    try 
-	{
-        $conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+try {
+    $conn = new PDO ( "sqlsrv:server = tcp:pvp6ee8yc7.database.windows.net,1433; Database = gamer_scores", "dummies", "dumm!es3");
+    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
-    catch(Exception $e)
-	{
-        die(var_dump($e));
+   catch ( PDOException $e ) 
+   {
+   print( "Error connecting to SQL Server." );
+   die(print_r($e));
     }
-	$sql3 = "TRUNCATE TABLE scoreboard";
+	$sql3 = "TRUNCATE TABLE scores";
     $conn->query($sql3);
 ?>
 </body>
