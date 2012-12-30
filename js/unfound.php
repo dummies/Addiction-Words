@@ -7,12 +7,12 @@
 
 <body>
 
-<p><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#008055;"  > Unfound Words  </label> </br></p>
+<p><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#7BA6B4;"  > Unfound Words  </label> </br></p>
 <?php
 echo "<table>";
-        echo "<tr><th>3 letters</th>";
-        echo "<th>4 letters</th>";
-        echo "<th>5 letters</th></tr>";
+        echo "<tr><td style='color:#0000A0'>3 letters</td>";
+        echo "<td style='color:#0000A0'>4 letters</td>";
+        echo "<td style='color:#0000A0'>5 letters</td></tr>";
 ?>
 </body>
 </html>

@@ -19,7 +19,7 @@
 <body>
 <?php  set_time_limit(0); ?>
  <img style="background-color:transparent;float:left" src="/images/board.PNG" width="100" height="100">
-<br><br><br><label style="font-size:30px;color:#008055;"  > Gamer Board </label> </br></br></br>
+<br><br><br><label style="font-size:30px;color:#7BA6B4;"  > Gamer Board </label> </br></br></br>
 <br/>
 <?php
    
@@ -54,9 +54,9 @@
     if(count($registrants) > 0)
 	{
         echo "<table>";
-        echo "<tr><th color=#408000>Rank</th>";
-        echo "<th color=#408000>Gamer</th>";
-        echo "<th><th color=#408000>Score</th></th></tr>";
+        echo "<tr><td style='color:#0000A0'>Rank</td>";
+        echo "<td style='color:#0000A0'>Gamer</td>";
+        echo "<td style='color:#0000A0'>Score</th></td></tr>";
 		$i=0;
 		$prev=NULL;
         foreach($registrants as $registrant) 
@@ -66,9 +66,9 @@
 			$i=$i+1;
 			$prev=$registrant['score'];
 			}
-            echo "<tr><th>".$i."</th>";
-			echo "<th>".$registrant['name']."</th>";
-            echo "<th><th>".$registrant['score']."</th></th></tr>";
+            echo "<tr><td style='color:#0000A0'>".$i."</td>";
+			echo "<td style='color:#0000A0'>".$registrant['name']."</td>";
+            echo "<td style='color:#0000A0'>".$registrant['score']."</td></tr>";
         }
         echo "</table>";
     } 
