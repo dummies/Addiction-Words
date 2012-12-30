@@ -59,10 +59,11 @@
     $sql_select = "SELECT * FROM scores order by Score desc";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
-	echo $registrants;
+	var_dump($registrants);
 	echo "<br/> I am fetching <br/> ";
     if(count($registrants) > 0)
 	{
+		echo count($registrants);
         echo "<table>";
         echo "<tr><th color=#408000>Rank</th>";
         echo "<th color=#408000>Gamer</th>";
@@ -71,6 +72,7 @@
 		$prev=NULL;
         foreach($registrants as $registrant) 
 		{
+			var_dump($registrant);
 			if($prev!=$registrant['score'])	
 			{
 			$i=$i+1;
