@@ -3,7 +3,7 @@ var val =false;
 var tab = [false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false];
 var tdarray =[] ,foundwordsarr = [];
 var str =new String("");
-var site_url = "http://www.wordtrix.in/js/gamerboard.php";
+var site_url = "http://www.wordtrix.in/gamerboard.html";
 var words;
 var name;
 var seconds_left ;
@@ -200,13 +200,13 @@ xhr.open('GET', 'js/insert-db.php?name='+name+'&score='+score,false);
 xhr.send(null);
 console.log(xhr.responseText);
 window.location.href = "gamerboard.html";
-//setTimeout('moveurl()',200);
+//setTimeout('moveurl()',200); 
 
 }
 
 
 function moveurl() {
-window.location.href = "js/gamerboard.php";
+window.location.href = "gamerboard.html";
 }
 
 
@@ -233,13 +233,18 @@ function cleardb() {
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', 'js/clearlb.php',true);
 	xhr.send(null);
-	console.log(xhr.responseText)
+	console.log(xhr.responseText);
+}
+function loaduserstuff() {
+	name = window.localStorage.getItem('name'); 
+	document.getElementById("user_img").src = window.localStorage.getItem("user_img_fb");
 }
 function init() {
 	//all initlization stuff
 	loadwords();
 	loadpuzzle();
 	cleardb();
+	loaduserstuff();
 	document.onselectstart = function(){ return false; }
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', 'js/timer.php',false);
