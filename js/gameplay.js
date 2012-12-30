@@ -199,7 +199,7 @@ var xhr = new XMLHttpRequest();
 xhr.open('GET', 'js/insert-db.php?name='+name+'&score='+score,false);
 xhr.send(null);
 console.log(xhr.responseText);
-window.location.href = "js/gamerboard.php";
+window.location.href = "gamerboard.html";
 //setTimeout('moveurl()',200);
 
 }
