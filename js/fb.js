@@ -66,7 +66,7 @@ function updateUserInfo(response)
      FB.api('/me', function(response) {
        //document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + 'hello ' + response.name;
        document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">';
-       //document.getElementById('user').innerHTML = 'hi' + response.name;
+       document.getElementById('user_name').innerHTML = <a href="#">"Hi ," + response.first_name +"!" </a>
 	   console.log(response);
 	   //document.getElementById('photo').src="https://graph.facebook.com/' + response.id + '/picture";
 	   //store user details.
