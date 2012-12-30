@@ -71,7 +71,7 @@ function updateUserInfo(response)
 	   console.log(response);
      FB.api('/me', function(response) {
        //document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + 'hello ' + response.name;
-       document.getElementById('user_photo').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture>"';
+       document.getElementById('user_photo').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">';
        document.getElementById('user_name').innerHTML = 'Hi ,'+ response.first_name +'!';
 	   document.getElementById('user-info').style.display = 'none'
 	   console.log(response);
