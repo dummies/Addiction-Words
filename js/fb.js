@@ -65,8 +65,10 @@ function updateUserInfo(response)
 	   console.log(response);
      FB.api('/me', function(response) {
        //document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + 'hello ' + response.name;
+       document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">';
+
 	   console.log(response);
-	   document.getElementById('photo').src="https://graph.facebook.com/' + response.id + '/picture";
+	   //document.getElementById('photo').src="https://graph.facebook.com/' + response.id + '/picture";
 	   //store user details.
 	 window.localStorage.setItem("name",response.name);
 	 //window.localStorage.setItem("user_img_fb",response.id);
