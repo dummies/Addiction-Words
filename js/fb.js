@@ -60,13 +60,19 @@ document.body.className = response.authResponse ? 'connected' : 'not_connected';
         updateUserInfo(response);
       }
     }
+function logoutUser() {  
+	FB.logout();
+	document.getElementById('user-info').style.display = 'block';
+	document.getElementById('user_photo').innerHTML = '<img src="images/def_male.jpg">';
+}
 function updateUserInfo(response) 
 {
 	   console.log(response);
      FB.api('/me', function(response) {
        //document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + 'hello ' + response.name;
-       document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">';
+       document.getElementById('user_photo').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">';
        document.getElementById('user_name').innerHTML = 'Hi ,'+ response.first_name +'!';
+	   document.getElementById('user-info').style.display = 'none'
 	   console.log(response);
 	   //document.getElementById('photo').src="https://graph.facebook.com/' + response.id + '/picture";
 	   //store user details.
