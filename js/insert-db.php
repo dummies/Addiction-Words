@@ -36,26 +36,26 @@
     $conn = new PDO ( "sqlsrv:server = tcp:pvp6ee8yc7.database.windows.net,1433; Database = gamer_scores", "dummies", "dumm!es3");
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
-   catch ( PDOException $e ) {
+   catch ( PDOException $e ) 
+   {
    print( "Error connecting to SQL Server." );
    die(print_r($e));
-}
-  $v1 = $_GET["name"];
-  $v2 = $_GET["score"];
-   
-   $stmt3 = $conn->prepare("INSERT INTO scores (Name,Score) VALUES (:var1, :var2)");
-
-   if ($stmt3) {
-      $stmt3->bindValue(1, $v1);
-      $stmt3->bindValue(2, $v2);
-      if ($stmt3->execute())
-         echo "Execution succeeded\n";     
-      else
-         echo "Execution failed\n";
-   }
-   else
-      var_dump($conn->errorInfo());
-   
-
-
+    }
+   try 
+	{
+        $name = $_GET["name"];
+        $score = $_GET['score'];
+        $sql_insert = "INSERT INTO scoreboard (name, score) 
+                   VALUES (?,?)";
+        $stmt = $conn->prepare($sql_insert);
+        $stmt->bindValue(1, $name);
+        $stmt->bindValue(2, $score);
+        $stmt->execute();
+    }
+	
+    catch(Exception $e)
+    {
+        die(var_dump($e));
+    }
+	echo "success" ;
 ?>
