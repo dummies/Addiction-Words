@@ -15,9 +15,9 @@ var interval = setInterval(function() {
     }
 }, 1000);
 </script>
-<link href="styles/coolMenu.css" rel="stylesheet" type="text/css" media="screen"/>
-<link href="styles/check_cs6.css" rel="stylesheet" type="text/css">
-<link href="styles/play.css" rel="stylesheet" type="text/css">
+<link href="/styles/coolMenu.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/styles/check_cs6.css" rel="stylesheet" type="text/css">
+<link href="/styles/play.css" rel="stylesheet" type="text/css">
 <script src="js/fb.js"> </script>
 <script src="//connect.facebook.net/en_US/all.js"></script>
 </head>
@@ -47,7 +47,7 @@ var interval = setInterval(function() {
         <label id="user_name" style="position:relative;left:-115px;top:-40px;color:#FFF"> Hi ,Player </label>
         </div>
 	</div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:24px;color:#408000;"  > next game : </label>
+<label style="font-size:24px;color:#408000;"  > next game : </label>
 <label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#408000;position:relative ; left: +100px;"></label>
 <p><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#008055;"  > Gamer Statistics </label> </br></br></p>
 <p>
