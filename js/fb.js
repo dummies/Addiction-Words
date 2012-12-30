@@ -64,10 +64,11 @@ function updateUserInfo(response)
 {
 	   console.log(response);
      FB.api('/me', function(response) {
-       document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + 'hello ' + response.name;
+       //document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + 'hello ' + response.name;
+	   console.log(response);
 	   //store user details.
 	 window.localStorage.setItem("name",response.name);
-	 window.localStorage.setItem("user_img_fb",response.id);
+	 //window.localStorage.setItem("user_img_fb",response.id);
      });
 	 
 }
