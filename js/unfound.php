@@ -8,6 +8,7 @@
 <body>
 
 <p><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#7BA6B4;"  > Unfound Words  </label> </br></p>
+<pre>
 <?php
 echo "<table>";
         echo "<tr><td style='color:#0000A0'>3 letters</td>";
@@ -15,7 +16,7 @@ echo "<table>";
         echo "<td style='color:#0000A0'>5 letters</td></tr>";
 		
 $boggle = $_GET["puzzle"];
-
+echo $boggle;
 $alphabet = str_split(str_replace(array("\n", " ", "\r"), "", strtolower($boggle)));
 $rows = array_map('trim', explode("\n", $boggle));
 $dictionary = file("/Data/op-line.txt");
@@ -95,6 +96,8 @@ $solution = array();
 find_words($graph, $chardict, 'None', array(), $prefixes, $solution);
 print_r($solution);
 
+
 ?>
+</pre>
 </body>
 </html>
