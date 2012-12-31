@@ -79,7 +79,7 @@
 						$name = $_GET["name"];
 						$score = $_GET['score'];
 						$id =$_GET['id'];
-						$sql_insert = "INSERT INTO scores (name,score,id) 
+						$sql_insert = "INSERT INTO leaderboard(name,score,id) 
 								   VALUES (?,?,?)";
 						$stmt = $conn->prepare($sql_insert);
 						$stmt->bindValue(1, $name);
