@@ -1,4 +1,3 @@
- var loaded =false;
  window.fbAsyncInit = function() {
     // init the FB JS SDK
     FB.init({
@@ -79,7 +78,7 @@ function updateUserInfo(response)
 	   document.getElementById('user-info').style.display = 'none'
 	   console.log(response);
 	   if(window.location.href == "http://www.wordtrix.in/gamerboard.html")
-	     document.getElementById('user_image_large').src =  "https://graph.facebook.com/"+response.id+"/picture?type=large";
+	       document.getElementById('user_image_large').src =  "https://graph.facebook.com/"+response.id+"/picture?type=large";
 	   //document.getElementById('photo').src="https://graph.facebook.com/' + response.id + '/picture";
 	   //store user details.
 	 //window.localStorage.setItem("name",response.name);
