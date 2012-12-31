@@ -153,7 +153,7 @@
 	{
         echo "<h3>Oops,Looks like its sleep time ,nobody is playing! </h3>";
     }
-	echo "<br/><br/><br/><br/></div>";
+	echo "</div>";
 ?>
 </body>
 </html>
