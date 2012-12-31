@@ -24,6 +24,7 @@ $sqlq = "SELECT * FROM games where id=?";
 $stmt = $conn->prepare($sqlq);
 $stmt->bindValue(1, $tmp);
 $result =$stmt->execute();
+echo $tmp;
 var_dump($result);
 //$res = $conn->query($sqlq);
 /*if(count($registrants) > 0) 
