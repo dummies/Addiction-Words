@@ -43,7 +43,7 @@
         echo "<table>";
         echo "<tr><th style='color:#0000A0'>Rank</th>";
         echo "<td><th style='color:#0000A0'>Gamer</th></td>";
-        echo "<th><th style='color:#0000A0'>Score</th></th></tr>";
+        echo "<th><td><th style='color:#0000A0'>Score</th></td></th></tr>";
 		$i=0;
 		$prev=NULL;
         foreach($registrants as $registrant) 
@@ -56,7 +56,7 @@
 			}
             echo "<tr><td style='color:#0000A0'>".$i."</td>";
 			echo "<td><td style='color:#0000A0'>".$registrant['Name']."</td></td>";
-            echo "<td><td style='color:#0000A0'>".$registrant['Score']."</td></td></tr>";
+            echo "<td><td><td style='color:#0000A0'>".$registrant['Score']."</td></td></td></tr>";
         }
         echo "</table>";
     } 

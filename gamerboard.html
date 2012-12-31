@@ -1,18 +1,10 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
 
-<body>
-</body>
-</html>
 <!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Gamer Stats</title>
+<script src="js/gameplay.js" ></script>
 <script>
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'js/timer.php',false);
@@ -63,9 +55,10 @@ var interval = setInterval(function() {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:24px;color:#0000A0;"  > next game : </label>
 <label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;position:relative ; left: +100px;"></label>
 <p><br><br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<label style="font-size:30px;color:#7BA6B4;"  > Gamer Statistics </label><img style="background-color:transparent;float:left" src="/images/stats.PNG" width="50" height="50"></br></br></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label style="font-size:30px;color:#7BA6B4;"  > Gamer Statistics </label></br></br></p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:26px;color:#0000A0;"  > gamer score : </label></p>
+<label id="score_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#008000;position:relative ; left: +120px;"></label>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:26px;color:#0000A0;"  > total words : </label></p>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:26px;color:#0000A0;"  > bonus : </label></p>
