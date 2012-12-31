@@ -19,17 +19,17 @@ try {
 
  try
  {
-$sqlq = "SELECT * FROM games where id={$tmp};";
-/*$stmt = $conn->prepare($sqlq);
-$stmt->bindValue(1, $tmp);*/
+$sqlq = "SELECT * FROM games where id=?";
+$stmt = $conn->prepare($sqlq);
+$stmt->bindValue(1, $tmp);
 //$result =$stmt->execute();
-$stmt = $conn->query($sqlq);
+$res = $conn->query($sqlq);
 /*if(count($registrants) > 0) 
 {*/
 /*echo "fuck me";
 echo $result['id'];
 echo "fucked";*/
-echo $stmt['seq'];
+echo $res['seq'];
 /* foreach($registrants as $registrant) 
 		{
       if($tmp == $registrant['id'])
