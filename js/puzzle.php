@@ -8,25 +8,31 @@ try {
    print( "Error connecting to SQL Server." );
    die(print_r($e));
     }
- $h =date('H');
+
+
+$h =date('H');
  $m =date('i');
  //max time 23:59 
  $tmp = $h*20 + floor($m/3) ;
  //possible indexes , 1 2 3... 
  //max index - 23*20 + (59) /3 = 460 +19 =479 ;
- //$tmp = ($tmp-1)*10 +1 ;
+ $tmp = ($tmp-1)*10 +1 ;
  //indexes  , 1 11 21 31..... ..max = 4781
 
  try
  {
 $sqlq = "SELECT * FROM games";
-/*$stmt = $conn-
-//$result =$stmt->execut>prepare($sqlq);
-$stmt->bindValue(1, $tmp);*/e();
+/*$stmt = $conn->prepare($sqlq);
+$stmt->bindValue(1, $tmp);*/
+//$result =$stmt->execute();
 $stmt = $conn->query($sqlq);
 $registrants = $stmt->fetchAll(); 
 if(count($registrants) > 0) 
 {
+/*echo "fuck me";
+echo $result['id'];
+echo $result['seq'];
+echo "fucked";*/
  foreach($registrants as $registrant) 
 		{
       if($tmp == $registrant['id'])
