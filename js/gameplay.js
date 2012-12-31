@@ -195,7 +195,7 @@ function submitgame() {
 /*alert("your score ="+ document.getElementById("score_div").innerHTML + " ,no of words :" + foundwordsarr.length +" !" );*/
 //submit to db
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'js/insert-db.php?name='+name+'&score='+score+"&id="+id,true);
+xhr.open('GET', 'js/insert-db.php?name='+name+'&score='+score+"&id="+id,false);
 xhr.send(null);
 console.log(xhr.responseText);
 window.localStorage.setItem('finalscore',score);
