@@ -12,6 +12,7 @@
     h3 { font-size: 1.2em; }
     table { margin-top: 0.75em; }
     th { font-size:24px; text-align: left; border: none; padding-left: 10px; }
+	.unique { color:#0000A0;font-size:24px; text-align: left; border: none;  }
     td { font-size:18px; padding: 0.25em 2em 0.25em 0em; border: 0 none; }
 </style>
 
@@ -41,7 +42,7 @@
 	{
 		//echo count($registrants);
         echo "<table>";
-        echo "<tr><th style='color:#0000A0'>Rank</th>";
+        echo "<tr><th class='unique'>Rank</th>";
         echo "<td><th style='color:#0000A0'>Gamer</th></td>";
         echo "<th><td><td><th style='color:#0000A0'>Score</th></td></td></th></tr>";
 		$i=0;

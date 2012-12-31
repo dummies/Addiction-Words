@@ -198,8 +198,8 @@ var xhr = new XMLHttpRequest();
 xhr.open('GET', 'js/insert-db.php?name='+name+'&score='+score+"&id="+id,true);
 xhr.send(null);
 console.log(xhr.responseText);
-window.localStorage.setItem("finscore",score);
-window.localStorage.setItem("wordcount",foundwordsarr.length);
+window.localStorage.setItem('finscore',score);
+window.localStorage.setItem('wordcount',foundwordsarr.length);
 window.location.href = "gamerboard.html";
 //setTimeout('moveurl()',200);
 
