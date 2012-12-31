@@ -52,59 +52,34 @@
         </div>
 	</div>
     
-<div id="details" style="background-color:#3c3c3c; height:230px; margin-top:10px; margin-left:100px; margin-right:100px">
-       <p style="margin-top:0px; text-align:center; color:#dedede; font-size:40px; font-family:segoe Ui; font-weight:bold">Wordtrix </p>
-       <p align="center" style="font-size:26px; font-family:segoe Ui; color:#dedede">Here is your chance to play with words and compete with your riends. Get ready to try out your word making skills at wordtrix and compare your scores with your fellow mates</p>
+<div id="details" style="background-color:#3c3c3c; opacity:0.80; height:150px; margin-top:3px; margin-left:100px; margin-right:100px">
+     <!--  <p style="margin-top:0px; text-align:center; color:#dedede; font-size:40px; font-family:segoe Ui; font-weight:bold">Wordtrix </p>-->
+       <p align="center" style="font-size:26px; font-family:segoe Ui;color:#dedede">Here is your chance to play with words and compete with your riends. Get ready to try out your word making skills at wordtrix and compare your scores with your fellow mates</p>
        <div style="margin-top:0px; margin-left:750px">
-                <a href="http://www.wordtrix.in/game.html" class="hover-panel">
+                       <a href="http://www.wordtrix.in/game.html" class="hover-panel">
                     <h3 align="center">Play the game</h3>
                 </a>
        </div>
     </div>
     
-    <div style="margin-left:100px; margin-right:100px; margin-top:30px">
-    <div style="background-color:#4617b4">
-    <p align="center" style="margin-top:0px; color:#FFF; font-size:30px; font-family:segoe Ui; font-weight:bold">Watchout how to play</p>
+    <div style="margin-left:100px; margin-right:100px; margin-top:60px">
+    <div style="background-color:#4617b4;opacity:0.90">
+    <p align="center" style="margin-top:0px; color:#FFF; font-size:30px; font-family:segoe Ui; font-weight:bold">how to play ?</p>
     </div>
-    <div id="footer" style="margin-left: 100px; margin-right: 100px; color: #F0F0F0;">
-            <table width="200" height="200" border="1" style="margin-top:30px">
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-            </table>
-    </div>
-    </div>
+    <div id="footer" style="margin-left: 50px; margin-right: 50px; color: #F0F0F0;opacity:.75;">
+      <img src="images/demo/demo.png" style="margin-left:-65px;" />
+     </div>
+     </div>
+    
     
   <div style="margin-left:100px; margin-right:100px; margin-top:30px;">
-	<div style="background-color:#4617b4">
+	<div style="background-color:#4617b4;opacity:0.90">
     <p align="center" style="margin-top:0px; color:#FFF; font-size:30px; font-family:segoe Ui; font-weight:bold"> Top Players</p>
     </div>
 	<div style="margin-left:200px; margin-right:200px">	
+  </div>
 </div>
-
-    
-    </div>
+</div>
 <?php
 
 	try {

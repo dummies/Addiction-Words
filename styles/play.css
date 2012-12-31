@@ -7,13 +7,13 @@ a {
 }
  
 .hover-panel {
-    background-color: #7092be;
+    background-color:#004080;
     background-image: url(http://www.avocat-rainio.com/images/forward--2-.png);
     background-position: 292px 10px;
     background-repeat: no-repeat;
     color: #ffffff;
     float: left;
-    height: 30px;
+    height: 55px;
     width: 262px;
     margin: 0 10px 10px 0;
     padding: 15px;
@@ -24,8 +24,8 @@ a {
 }
  
 .hover-panel h3 {
-    font-family: tandelle-1, tandelle-2, Impact, Sans-serif, sans;
-    font-size: 38px;
+    font-family:"Segoe Script";
+    font-size: 36px;
     line-height: 1;
     margin: 0 0 10px;
     text-transform: uppercase;
