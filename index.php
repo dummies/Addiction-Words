@@ -13,6 +13,11 @@
 	position:relative;
 	top:-50px;
 	color:#660000;
+    font-size:16px;
+	font-family:"Segoe Script";
+}
+.container {
+	width: 720px;
 }
 </style>
 </head>
@@ -107,12 +112,12 @@
     $sql_select = "SELECT * FROM leaderboard order by Score desc";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
-	var_dump($registrants);
+	//var_dump($registrants);
 	//echo "<br/> I am fetching <br/> ";
     if(count($registrants) > 0)
 	{
 		//echo count($registrants);
-        echo "<div id='container'><h1> Top Players</h1>";
+        echo "<div id='container'>";
 		$i=0;
 		$prev=NULL;
         foreach($registrants as $registrant) 
