@@ -79,12 +79,12 @@
 						$name = $_GET["name"];
 						$score = $_GET['score'];
 						$id =$_GET['id'];
-						$sql_insert = "INSERT INTO scores (id, Name, Score) 
+						$sql_insert = "INSERT INTO scores (name,score,id) 
 								   VALUES (?,?,?)";
 						$stmt = $conn->prepare($sql_insert);
-						$stmt->bindValue(1, $id);
-						$stmt->bindValue(2, $name);
-						$stmt->bindValue(3, $score);
+						$stmt->bindValue(1, $name);
+						$stmt->bindValue(2, $score);
+						$stmt->bindValue(3, $id);
 						$stmt->execute();
 					}
 					catch(Exception $e)
