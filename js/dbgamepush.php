@@ -7,19 +7,14 @@
 
 <body>
 <?php
-    echo "dbpushe";
-	$host = "us-cdbr-azure-east-b.cloudapp.net";
-    $user = "bcd2949c8baf7b";
-    $pwd = "ee7246b9";
-    $db = "wordaddABbVVe2ev";
-    try 
-	{
-        $conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    try {
+    $conn = new PDO ( "sqlsrv:server = tcp:pvp6ee8yc7.database.windows.net,1433; Database = gamer_scores", "dummies", "dumm!es3");
+    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
-    catch(Exception $e)
-	{
-        die(var_dump($e));
+   catch ( PDOException $e ) 
+   {
+   print( "Error connecting to SQL Server." );
+   die(print_r($e));
     }
 	$list=array('E','E','E','E','E','E','T','T','T','A','A','A','O','O','O','I','I','I','N','N','N','S','S','S','S','R','R','R','H','H','L','L','D','D','D','D','C','C','U','U','M','M','F','P','G','W','Y','B','V','K','X','J','Q','Z');
 /*$sql1 = "CREATE TABLE games(id INT NOT NULL AUTO_INCREMENT, 
