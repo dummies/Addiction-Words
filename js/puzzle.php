@@ -1,3 +1,4 @@
+<pre>
 <?php
 try {
     $conn = new PDO ( "sqlsrv:server = tcp:pvp6ee8yc7.database.windows.net,1433; Database = gamer_scores", "dummies", "dumm!es3");
@@ -23,12 +24,14 @@ $sqlq = "SELECT * FROM games where id=?";
 $stmt = $conn->prepare($sqlq);
 $stmt->bindValue(1, $tmp);
 $result =$stmt->execute();
+var_dump($result);
 //$res = $conn->query($sqlq);
 /*if(count($registrants) > 0) 
 {*/
 /*echo "fuck me";
 echo $result['id'];
 echo "fucked";*/
+echo "result<br/>";
 echo $result['seq'];
 /* foreach($registrants as $registrant) 
 		{
@@ -44,3 +47,4 @@ echo $result['seq'];
 	 die($e);
  }
 ?>
+</pre>
