@@ -205,7 +205,7 @@ window.location.href = "gamerboard.html";
 
 
 function moveurl() {
-window.location.href = "js/gamerboard.php";
+window.location.href = "gamerboard.html";
 }
 
 
