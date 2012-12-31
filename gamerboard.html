@@ -6,6 +6,12 @@
 <title>Gamer Stats</title>
 <script src="js/gameplay.js" ></script>
 <script>
+ window.onload = function() {
+document.getElementById('div_score').innerHTML = window.localStorage.getItem('finscore');
+document.getElementById('totalwords').innerHTML = window.localStorage.getItem('wordcount');
+ };
+</script>
+<script>
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'js/timer.php',false);
 xhr.send(null);
@@ -19,9 +25,6 @@ var interval = setInterval(function() {
 		window.location ="http://www.wordtrix.in/game.html" ;
     }
 }, 1000);
-document.getElementById('div_score').innerHTML = window.localStorage.getItem('finscore');
-document.getElementById('totalwords').innerHTML = window.localStorage.getItem('wordcount');
-
 </script>
 <link href="styles/coolMenu.css" rel="stylesheet" type="text/css" media="screen"/>
 <link href="styles/check_cs6.css" rel="stylesheet" type="text/css">
