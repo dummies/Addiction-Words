@@ -12,7 +12,7 @@
 .goup {
 	position:relative;
 	top:-80px;
-	color:#660000;
+	color:#fff;
     font-size:20px;
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
@@ -20,7 +20,7 @@
 .goup2 {
 	position:relative;
 	top:-90px;
-	color:#660000;
+	color:#fff;
     font-size:20px;
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
