@@ -19,6 +19,9 @@ var interval = setInterval(function() {
 		window.location ="http://www.wordtrix.in/game.html" ;
     }
 }, 1000);
+document.getElementById('score_div').innerHTML = window.localStorage.getItem('finscore');
+document.getElementById('count_div').innerHTML = window.localStorage.getItem('wordcount');
+
 </script>
 <link href="styles/coolMenu.css" rel="stylesheet" type="text/css" media="screen"/>
 <link href="styles/check_cs6.css" rel="stylesheet" type="text/css">
@@ -55,12 +58,13 @@ var interval = setInterval(function() {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:24px;color:#0000A0;"  > next game : </label>
 <label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;position:relative ; left: +100px;"></label>
 <p><br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <label style="font-size:36px;color:#7BA6B4;"  > Gamer Statistics </label></br></br></p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#0000A0;"  > gamer score : </label></p>
 <label id="score_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;"></label>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#0000A0;"  > total words : </label></p>
 <p>
+<label id="count_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;"></label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#0000A0;"  > bonus : </label></p>
 </div>
 <iframe src="http://www.wordtrix.in/js/rank.php" name="gamer board" frameborder="0" height="800" width="650" style="position: absolute; top: 85px; left: 700px;"></iframe>

@@ -6,6 +6,7 @@ var site_url = "http://www.wordtrix.in/gamerboard.html";
 var words;
 var name,id;
 var seconds_left ;
+var count=0;
 var prev =-1,score =0 ,valid =false ,exist =false;
 
 function convert(m) {
@@ -146,6 +147,7 @@ function addfoundword()
 	word.appendChild(fword);
 	found.appendChild(word);
 	foundwordsarr.push(str);
+count++;
 }
 
 
@@ -198,6 +200,8 @@ var xhr = new XMLHttpRequest();
 xhr.open('GET', 'js/insert-db.php?name='+name+'&score='+score+"&id="+id,false);
 xhr.send(null);
 console.log(xhr.responseText);
+window.localStorage.setItem("finscore",score);
+window.localStorage.setItem("wordcount",count);
 window.location.href = "gamerboard.html";
 //setTimeout('moveurl()',200);
 
