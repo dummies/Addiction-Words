@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<style type="text/css">
+<?php /*?><style type="text/css">
     body { background-color: #fff; border-top: solid 10px #000;
         color: #333; font-size: .85em; margin: 20; padding: 20;
         font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
@@ -13,7 +13,7 @@
     table { margin-top: 0.75em; }
     th { font-size: 1.2em; text-align: left; border: none; padding-left: 0; }
     td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
-</style>
+</style><?php */?>
 
 </head>
 <body>
