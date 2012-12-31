@@ -78,6 +78,8 @@ function updateUserInfo(response)
        document.getElementById('user_name').innerHTML = 'Hi, '+ response.first_name +'!';
 	   document.getElementById('user-info').style.display = 'none'
 	   console.log(response);
+	   if(!document.getElementById('user_iamge_large'))
+	     document.getElementById('user_iamge_large').src =  "https://graph.facebook.com/"+response.id+"/picture?type=large";
 	   //document.getElementById('photo').src="https://graph.facebook.com/' + response.id + '/picture";
 	   //store user details.
 	 //window.localStorage.setItem("name",response.name);

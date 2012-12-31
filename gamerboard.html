@@ -19,8 +19,8 @@ var interval = setInterval(function() {
 		window.location ="http://www.wordtrix.in/game.html" ;
     }
 }, 1000);
-document.getElementById('score_div').innerHTML = window.localStorage.getItem('finscore');
-document.getElementById('count_div').innerHTML = window.localStorage.getItem('wordcount');
+document.getElementById('score_div').value = parseInt(window.localStorage.getItem('finscore'));
+document.getElementById('count_div').value = parseInt(window.localStorage.getItem('wordcount'));
 
 </script>
 <link href="styles/coolMenu.css" rel="stylesheet" type="text/css" media="screen"/>
@@ -51,24 +51,31 @@ document.getElementById('count_div').innerHTML = window.localStorage.getItem('wo
 		</ul>
 		</div>
         <div style="float:right;">
-        <img id="user_photo" height="50px" width="50px;" style="padding:30px;margin-right:90px;">
+        <img id="user_photo_large" height="50px" width="50px;" style="padding:30px;margin-right:90px;">
         <label id="user_name" style="position:relative;left:-115px;top:-40px;color:#FFF"> Hi ,Player </label>
         </div>
 	</div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:24px;color:#0000A0;"  > next game : </label>
-<label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;position:relative ; left: +100px;"></label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:24px;color:#0000A0;margin-left:200px;"  > next game : </label>
+<label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0080FF;">60</label>
+<img src="images/facebook.jpg" id="user_image" height="200" width="200" style="margin-left:100px; position:absolute; left: -96px; top: 183px;" />
 <p><br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <label style="font-size:36px;color:#7BA6B4;"  > Gamer Statistics </label></br></br></p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#0000A0;"  > gamer score : </label></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label style="font-size:30px;color:#0000A0;"  > score : </label></p>
 <label id="score_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;"></label>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#0000A0;"  > total words : </label></p>
 <p>
-<label id="count_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;"></label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#0000A0;"  > bonus : </label></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label style="font-size:30px;color:#0000A0;"  > words : </label>
+</p>
+<p>
+<!--<label id="count_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;"></label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#0000A0;"  > bonus : </label></p>-->
 </div>
 <iframe src="http://www.wordtrix.in/js/rank.php" name="gamer board" frameborder="0" height="800" width="650" style="position: absolute; top: 85px; left: 700px;"></iframe>
-<iframe src="http://www.wordtrix.in/js/unfound.php" name="unfound words" frameborder="0" height="400" width="400" style="position: absolute; top: 0px; left: 100px;top: 400px;">
+<!--<iframe src="http://www.wordtrix.in/js/unfound.php" name="unfound words" frameborder="0" height="400" width="400" style="position: absolute; top: 0px; left: 100px;top: 400px;">-->
 </iframe>
 
 </div>

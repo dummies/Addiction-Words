@@ -1,4 +1,5 @@
 <?php
+    ignore_user_abort(true);
 	/*used to insert data into leader board.*/
 	/*$host = "us-cdbr-azure-east-b.cloudapp.net";
     $user = "bcd2949c8baf7b";
