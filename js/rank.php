@@ -41,8 +41,8 @@
 	{
 		//echo count($registrants);
         echo "<table>";
-        echo "<tr><th style='color:#0000A0'>Rank</td>";
-        echo "<th style='color:#0000A0'>Gamer</th>";
+        echo "<tr><th style='color:#0000A0'>Rank</th>";
+        echo "<td><th style='color:#0000A0'>Gamer</th></td>";
         echo "<th><th style='color:#0000A0'>Score</th></th></tr>";
 		$i=0;
 		$prev=NULL;
@@ -54,9 +54,9 @@
 			$i=$i+1;
 			$prev=$registrant['Score'];
 			}
-            echo "<tr><td style='color:#0000A0'>".$i."</th>";
-			echo "<td style='color:#0000A0'>".$registrant['Name']."</th>";
-            echo "<th><td style='color:#0000A0'>".$registrant['Score']."</th></th></tr>";
+            echo "<tr><td style='color:#0000A0'>".$i."</td>";
+			echo "<td><td style='color:#0000A0'>".$registrant['Name']."</td></td>";
+            echo "<td><td style='color:#0000A0'>".$registrant['Score']."</td></td></tr>";
         }
         echo "</table>";
     } 
