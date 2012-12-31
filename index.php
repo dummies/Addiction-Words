@@ -25,10 +25,6 @@
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
-.container {
-	width: 720px;
-	height: 600px;
-}
 </style>
 </head>
 <body>
