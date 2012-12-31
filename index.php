@@ -16,6 +16,15 @@
     font-size:20px;
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
+
+.goup2 {
+	position:relative;
+	top:-85px;
+	color:#660000;
+    font-size:20px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
 .container {
 	width: 720px;
 	height: 600px;
@@ -133,7 +142,7 @@
 			$tmp = "https://graph.facebook.com/".$registrant['id']."/picture?type=large";
 			echo "<img src='$tmp' height='200' width='200'>";
 			echo "<label class='goup'>".$registrant['name']."</label><br/>";
-			echo "<label class='goup'> Score:".$registrant['score']."</label>";
+			echo "<label class='goup2'> Score:".$registrant['score']."</label>";
 			echo "</div></div>";
 			}
 			$i++;
