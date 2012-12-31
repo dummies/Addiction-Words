@@ -20,7 +20,7 @@ try {
 
  try
  {
-$sqlq = "SELECT * FROM games where id=".$tmp;
+$sqlq = "SELECT * FROM games where id=".$tmp.";";
 /*$stmt = $conn->prepare($sqlq);
 $stmt->bindValue(1, $tmp);
 $result =$stmt->execute();*/
