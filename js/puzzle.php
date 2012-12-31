@@ -23,24 +23,23 @@ $host = "us-cdbr-azure-east-b.cloudapp.net";
 
  try
  {
-$sqlq = "SELECT * FROM games";
+$sqlq = "SELECT * FROM games where id={$tmp};";
 /*$stmt = $conn->prepare($sqlq);
 $stmt->bindValue(1, $tmp);*/
 //$result =$stmt->execute();
 $stmt = $conn->query($sqlq);
-$registrants = $stmt->fetchAll(); 
-if(count($registrants) > 0) 
-{
+/*if(count($registrants) > 0) 
+{*/
 /*echo "fuck me";
 echo $result['id'];
-echo $result['seq'];
 echo "fucked";*/
- foreach($registrants as $registrant) 
+echo $stmt['seq'];
+/* foreach($registrants as $registrant) 
 		{
       if($tmp == $registrant['id'])
       echo $registrant['seq'];
-		}
-}
+		}*/
+//}
 
 //sleep time would be 23 hr 59 mins ... => 23*60*60+59*60 = 4971540 seconds
 }
