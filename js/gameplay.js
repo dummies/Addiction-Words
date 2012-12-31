@@ -2,7 +2,7 @@ var val =false;
 var tab = [false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false ,false];
 var tdarray =[] ,foundwordsarr = [];
 var str =new String("");
-var site_url = "http://www.wordtrix.in/js/gamerboard.php";
+var site_url = "http://www.wordtrix.in/gamerboard.html";
 var words;
 var name;
 var seconds_left ;
