@@ -27,6 +27,7 @@
 
 .container {
 	width: 720px;
+	height: 600px;
 }
 </style>
 </head>
