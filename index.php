@@ -136,6 +136,7 @@
 			if($i < 8)	
 			{
 			echo "<div class='panel'><div class='hover'>";
+			echo "<div style='height:50px;width:200px;background-color:#E7EBF2;top:+150px;' >";
             /*echo "<tr><th>".$i."</th>";
 			echo "<th>".$registrant['Name']."</th>";
             echo "<th><th>".$registrant['Score']."</th></th></tr>";*/
@@ -143,7 +144,7 @@
 			echo "<img src='$tmp' height='200' width='200'>";
 			echo "<label class='goup'>".$registrant['name']."</label><br/>";
 			echo "<label class='goup2'> Score:".$registrant['score']."</label>";
-			echo "</div></div>";
+			echo "</div></div></div>";
 			}
 			$i++;
         }
