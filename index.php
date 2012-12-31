@@ -99,7 +99,7 @@
     </div>
     </div>
     
-  <div style="margin-left:100px; margin-right:100px; margin-top:30px;height:900px;">
+  <div style="margin-left:100px; margin-right:100px; margin-top:30px;">
 	<div style="background-color:#4617b4">
     <p align="center" style="margin-top:0px; color:#FFF; font-size:30px; font-family:segoe Ui; font-weight:bold"> Top Players</p>
     </div>
@@ -152,7 +152,7 @@
 	{
         echo "<h3>Oops,Looks like its sleep time ,nobody is playing! </h3>";
     }
-	echo "</div>";
+	echo "</div><br/><br/><br/><br/>";
 ?>
 </body>
 </html>
