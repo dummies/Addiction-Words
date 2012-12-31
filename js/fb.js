@@ -72,6 +72,7 @@ function updateUserInfo(response)
      FB.api('/me', function(response) {
        //document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + 'hello ' + response.name;
        //document.getElementById('user_photo').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">';
+	   name = response.name;
 	   document.getElementById('user_photo').src = "https://graph.facebook.com/"+response.id+"/picture";
        document.getElementById('user_name').innerHTML = 'Hi ,'+ response.first_name +'!';
 	   document.getElementById('user-info').style.display = 'none'
@@ -79,7 +80,7 @@ function updateUserInfo(response)
 	   //document.getElementById('photo').src="https://graph.facebook.com/' + response.id + '/picture";
 	   //store user details.
 	 //window.localStorage.setItem("name",response.name);
-	 window.localStorage.setItem('fb_object',response);
+	 //window.localStorage.setItem('fb_object',response);
 	 //window.localStorage.setItem("user_img_fb",response.id);
      });
 	 
