@@ -22,14 +22,14 @@ try {
 $sqlq = "SELECT * FROM games where id=?";
 $stmt = $conn->prepare($sqlq);
 $stmt->bindValue(1, $tmp);
-//$result =$stmt->execute();
-$res = $conn->query($sqlq);
+$result =$stmt->execute();
+//$res = $conn->query($sqlq);
 /*if(count($registrants) > 0) 
 {*/
 /*echo "fuck me";
 echo $result['id'];
 echo "fucked";*/
-echo $res['seq'];
+echo $result['seq'];
 /* foreach($registrants as $registrant) 
 		{
       if($tmp == $registrant['id'])
