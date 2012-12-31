@@ -43,7 +43,7 @@
         echo "<table>";
         echo "<tr><th style='color:#0000A0'>Rank</th>";
         echo "<td><th style='color:#0000A0'>Gamer</th></td>";
-        echo "<th><td><th style='color:#0000A0'>Score</th></td></th></tr>";
+        echo "<th><td><td><th style='color:#0000A0'>Score</th></td></td></th></tr>";
 		$i=0;
 		$prev=NULL;
         foreach($registrants as $registrant) 
@@ -56,13 +56,13 @@
 			}
             echo "<tr><td style='color:#0000A0'>".$i."</td>";
 			echo "<td><td style='color:#0000A0'>".$registrant['Name']."</td></td>";
-            echo "<td><td><td style='color:#0000A0'>".$registrant['Score']."</td></td></td></tr>";
+            echo "<td><td><td><td style='color:#0000A0'>".$registrant['Score']."</td></td></td></td></tr>";
         }
         echo "</table>";
     } 
 	else
 	{
-        echo "<h3> <font color='#0000A0'>Oops! Looks like it's sleeping time ,nobody is playing :) </font></h3>";
+        echo "<h3> <font color='#0000A0'>Oops! Looks like it's sleeping time, nobody is playing :) </font></h3>";
     }
 	
 	//echo "<br/>I am closing<br/>";
