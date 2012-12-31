@@ -11,9 +11,9 @@
 <style>
 .goup {
 	position:relative;
-	top:-50px;
+	top:-60px;
 	color:#660000;
-    font-size:16px;
+    font-size:20px;
 	font-family:"Segoe Script";
 }
 .container {
@@ -131,7 +131,7 @@
             echo "<th><th>".$registrant['Score']."</th></th></tr>";*/
 			$tmp = "https://graph.facebook.com/".$registrant['id']."/picture?type=large";
 			echo "<img src='$tmp' height='200' width='200'>";
-			echo "<label class='goup'>".$registrant['name']."</label></br>";
+			echo "<label class='goup'>".$registrant['name']."</label>";
 			echo "<label class='goup'> Score:".$registrant['score']."</label>";
 			echo "</div></div>";
 			}
