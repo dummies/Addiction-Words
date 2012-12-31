@@ -11,12 +11,12 @@ try {
 
 
 $h =date('H');
- $m =date('i');
+$m =date('i');
  //max time 23:59 
  $tmp = $h*20 + floor($m/3) ;
  //possible indexes , 1 2 3... 
  //max index - 23*20 + (59) /3 = 460 +19 =479 ;
- $tmp = ($tmp-1)*10 +1 ;
+// $tmp = ($tmp-1)*10 +1 ;
  //indexes  , 1 11 21 31..... ..max = 4781
 
  try
