@@ -4,7 +4,7 @@ var tdarray =[] ,foundwordsarr = [];
 var str =new String("");
 var site_url = "http://www.wordtrix.in/gamerboard.html";
 var words;
-var name;
+var name,id;
 var seconds_left ;
 var prev =-1,score =0 ,valid =false ,exist =false;
 
@@ -195,7 +195,7 @@ function submitgame() {
 /*alert("your score ="+ document.getElementById("score_div").innerHTML + " ,no of words :" + foundwordsarr.length +" !" );*/
 //submit to db
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'js/insert-db.php?name='+name+'&score='+score,false);
+xhr.open('GET', 'js/insert-db.php?name='+name+'&score='+score+"&id="+id,false);
 xhr.send(null);
 console.log(xhr.responseText);
 window.location.href = "gamerboard.html";
@@ -203,10 +203,6 @@ window.location.href = "gamerboard.html";
 
 }
 
-
-function moveurl() {
-window.location.href = "gamerboard.html";
-}
 
 
 function loadpuzzle() {
@@ -234,14 +230,11 @@ function cleardb() {
 	xhr.send(null);
 	console.log(xhr.responseText)
 }
-function loaduserstuff() {
-	
-}
+
 function init() {
 	//all initlization stuff
 	loadwords();
 	loadpuzzle();
-	loaduserstuff();
 	cleardb();
 	document.onselectstart = function(){ return false; }
 	var xhr = new XMLHttpRequest();

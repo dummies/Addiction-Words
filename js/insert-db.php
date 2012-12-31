@@ -44,13 +44,15 @@
    try 
 	{
         $name = $_GET["name"];
-        $score = $_GET['score'];
-        $sql_insert = "INSERT INTO scores (Name, Score) 
-                   VALUES (?,?)";
-        $stmt = $conn->prepare($sql_insert);
-        $stmt->bindValue(1, $name);
-        $stmt->bindValue(2, $score);
-        $stmt->execute();
+		$score = $_GET['score'];
+		$id =$_GET['id'];
+		$sql_insert = "INSERT INTO scores (Name, Score ,id) 
+				   VALUES (?,?,?)";
+		$stmt = $conn->prepare($sql_insert);
+		$stmt->bindValue(1, $name);
+		$stmt->bindValue(2, $score);
+		$stmt->bindValue(3, $id);
+		$stmt->execute();
     }
 	
     catch(Exception $e)
@@ -58,4 +60,37 @@
         die(var_dump($e));
     }
 	echo "success" ;
+	//now submit to leaderboard if score >last value score of db
+	$sql_select = "SELECT * FROM leaderboard order by Score desc";
+    $stmt = $conn->query($sql_select);
+    $registrants = $stmt->fetchAll(); 
+	//var_dump($registrants);
+	//echo "<br/> I am fetching <br/> ";
+	$cnt =count($registrants) ;
+	$pushintodb = true;
+    if($cnt > 8) {
+		if($registrants[cnt-1]['score'] > $score)
+		 $pushintodb = false;
+	}
+	if($pushintodb) {
+		//push to leaderbaord now
+					try 
+					{
+						$name = $_GET["name"];
+						$score = $_GET['score'];
+						$id =$_GET['id'];
+						$sql_insert = "INSERT INTO scores (Name, Score ,id) 
+								   VALUES (?,?,?)";
+						$stmt = $conn->prepare($sql_insert);
+						$stmt->bindValue(1, $name);
+						$stmt->bindValue(2, $score);
+						$stmt->bindValue(3, $id);
+						$stmt->execute();
+					}
+					catch(Exception $e)
+					{
+						die(var_dump($e));
+					}
+	}
+	echo "<br/>inserted into leaderbaord";
 ?>
