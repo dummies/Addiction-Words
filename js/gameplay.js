@@ -234,10 +234,17 @@ function cleardb() {
 	xhr.send(null);
 	console.log(xhr.responseText)
 }
+function loaduserstuff() {
+	var resp = window.localStorage.getItem("fb_object");
+	name = resp.name;
+	document.getElementById('user_photo').src = "https://graph.facebook.com/"+resp.id+"/picture";
+    document.getElementById('user_name').innerHTML = 'Hi ,'+ resp.first_name +'!';
+}
 function init() {
 	//all initlization stuff
 	loadwords();
 	loadpuzzle();
+	loaduserstuff();
 	cleardb();
 	document.onselectstart = function(){ return false; }
 	var xhr = new XMLHttpRequest();

@@ -78,7 +78,8 @@ function updateUserInfo(response)
 	   console.log(response);
 	   //document.getElementById('photo').src="https://graph.facebook.com/' + response.id + '/picture";
 	   //store user details.
-	 window.localStorage.setItem("name",response.name);
+	 //window.localStorage.setItem("name",response.name);
+	 window.localStorage.setItem('fb_object',response);
 	 //window.localStorage.setItem("user_img_fb",response.id);
      });
 	 
