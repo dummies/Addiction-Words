@@ -19,8 +19,8 @@ var interval = setInterval(function() {
 		window.location ="http://www.wordtrix.in/game.html" ;
     }
 }, 1000);
-document.getElementById('score_div').value = parseInt(window.localStorage.getItem('finscore'));
-document.getElementById('count_div').value = parseInt(window.localStorage.getItem('wordcount'));
+document.getElementById('div_score').innerHTML = window.localStorage.getItem('finscore');
+document.getElementById('totalwords').innerHTML = window.localStorage.getItem('wordcount');
 
 </script>
 <link href="styles/coolMenu.css" rel="stylesheet" type="text/css" media="screen"/>
@@ -56,19 +56,22 @@ document.getElementById('count_div').value = parseInt(window.localStorage.getIte
         </div>
 	</div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:24px;color:#0000A0;margin-left:200px;"  > next game : </label>
-<label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0080FF;">60</label>
+<label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0080FF;"></label>
 <img src="images/facebook.jpg" id="user_image" height="200" width="200" style="margin-left:100px; position:absolute; left: -96px; top: 183px;" />
 <p><br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <label style="font-size:36px;color:#7BA6B4;"  > Gamer Statistics </label></br></br></p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<label style="font-size:30px;color:#0000A0;"  > score : </label></p>
-<label id="score_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;"></label>
+<label style="font-size:30px;color:#0000A0;"  > score : </label>
+</p>
+<label id="div_score" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;"></label>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <label style="font-size:30px;color:#0000A0;"  > words : </label>
+<label id="totalwords" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;"></label>
+<p>
 </p>
 <p>
 <!--<label id="count_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;"></label>
