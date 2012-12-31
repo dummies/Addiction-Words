@@ -9,7 +9,11 @@
 <script src="js/fb.js"> </script>
 <script src="//connect.facebook.net/en_US/all.js"></script>
 <style>
-
+.goup {
+	position:relative;
+	top:-50px;
+	color:#660000;
+}
 </style>
 </head>
 <body>
@@ -39,7 +43,7 @@
     
 <div id="details" style="background-color:#3c3c3c; height:230px; margin-top:10px; margin-left:100px; margin-right:100px">
        <p style="margin-top:0px; text-align:center; color:#dedede; font-size:40px; font-family:segoe Ui; font-weight:bold">Wordtrix </p>
-       <p align="center" style="font-size:26px; font-family:segoe Ui; color:#dedede">Here is your chance to play with words and compete with your friends. Get ready to try out your word making skills at wordtrix and compare your scores with your fellow mates</p>
+       <p align="center" style="font-size:26px; font-family:segoe Ui; color:#dedede">Here is your chance to play with words and compete with your riends. Get ready to try out your word making skills at wordtrix and compare your scores with your fellow mates</p>
        <div style="margin-top:0px; margin-left:750px">
                 <a href="http://www.wordtrix.in/game.html" class="hover-panel">
                     <h3 align="center">Play the game</h3>
@@ -86,34 +90,55 @@
     <p align="center" style="margin-top:0px; color:#FFF; font-size:30px; font-family:segoe Ui; font-weight:bold"> Top Players</p>
     </div>
 	<div style="margin-left:200px; margin-right:200px">	
-	<div class="panel"><div class="hover">
-     <img width="200px" height="200px" src="images/facebook1.png">
-    </div></div>
-	<div class="panel"><div class="hover">
-      <img width="200px" height="200px" src="images/facebook1.png">
-    </div></div>
-	<div class="panel"><div class="hover">
-      <img width="200px" height="200px" src="images/facebook1.png">
-    </div></div>
-	<div class="panel"><div class="hover">
-      <img width="200px" height="200px" src="images/facebook1.png">
-    </div></div>
-	<div class="panel"><div class="hover">
-      <img width="200px" height="200px" src="images/facebook1.png">
-    </div></div>
-	<div class="panel"><div class="hover">
-      <img width="200px" height="200px" src="images/facebook1.png">
-    </div></div>
-	<div class="panel"><div class="hover">
-      <img width="200px" height="200px" src="images/facebook1.png">
-    </div></div>
-	<div class="panel"><div class="hover">
-      <img width="200px" height="200px" src="images/facebook1.png">
-    </div></div>
-    </div>
 </div>
 
     
     </div>
+<?php
+
+	try {
+    $conn = new PDO ( "sqlsrv:server = tcp:pvp6ee8yc7.database.windows.net,1433; Database = gamer_scores", "dummies", "dumm!es3");
+    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    }
+   catch ( PDOException $e ) {
+   print( "Error connecting to SQL Server." );
+   die(print_r($e));
+}
+    $sql_select = "SELECT * FROM leaderboard order by Score desc";
+    $stmt = $conn->query($sql_select);
+    $registrants = $stmt->fetchAll(); 
+	var_dump($registrants);
+	//echo "<br/> I am fetching <br/> ";
+    if(count($registrants) > 0)
+	{
+		//echo count($registrants);
+        echo "<div id='container'><h1> Top Players</h1>";
+		$i=0;
+		$prev=NULL;
+        foreach($registrants as $registrant) 
+		{
+			//var_dump($registrant);
+			if($i < 8)	
+			{
+			echo "<div class='panel'><div class='hover'>";
+            /*echo "<tr><th>".$i."</th>";
+			echo "<th>".$registrant['Name']."</th>";
+            echo "<th><th>".$registrant['Score']."</th></th></tr>";*/
+			$tmp = "https://graph.facebook.com/".$registrant['id']."/picture?type=large";
+			echo "<img src='$tmp' height='200' width='200'>";
+			echo "<label class='goup'>".$registrant['name']."</label></br>";
+			echo "<label class='goup'> Score:".$registrant['score']."</label>";
+			echo "</div></div>";
+			}
+			$i++;
+        }
+        echo "</div>";
+    } 
+	else
+	{
+        echo "<h3>Oops,Looks like its sleep time ,nobody is playing! </h3>";
+    }
+	echo "</div>";
+?>
 </body>
 </html>
