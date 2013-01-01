@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 <title>wordtrix</title>
+<link rel="shortcut icon" href="images/icon.png" type="image/x-icon" />
 <meta charset="utf-8"/>
 <link href="styles/coolMenu.css" rel="stylesheet" type="text/css" media="screen"/>
 <link href="styles/check_cs6.css" rel="stylesheet" type="text/css">
