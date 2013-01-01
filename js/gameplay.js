@@ -252,6 +252,8 @@ function init() {
 	loadwords();
 	loadpuzzle();
 	cleardb();
+	window.localStorage.setItem('finalscore',0);
+	window.localStorage.setItem('wordcount',0);
 	document.onselectstart = function(){ return false; }
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', 'js/timer.php',false);
