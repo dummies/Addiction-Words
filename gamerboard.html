@@ -6,12 +6,6 @@
 <title>Gamer Stats</title>
 <script src="js/gameplay.js" ></script>
 <script>
- window.onload = function() {
-document.getElementById('divscore').innerHTML = window.localStorage.getItem('finalscore');
-document.getElementById('totalwords').innerHTML = window.localStorage.getItem('wordcount');
- };
-</script>
-<script>
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'js/timer.php',false);
 xhr.send(null);
@@ -60,10 +54,10 @@ var interval = setInterval(function() {
 	</div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:24px;color:#0000A0;margin-left:200px;"  > next game : </label>
 <label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0080FF;"></label>
-<img src="images/facebook.jpg" id="user_image_large" height="200" width="200" style="margin-left:100px; position:absolute; left: -96px; top: 183px;" />
-<p><br><br>
+<img id="user_image_large" height="200" width="200" style="margin-left:100px; position:absolute; left: -96px; top: 183px;" />
+<p><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<label style="font-size:36px;color:#7BA6B4;"  > Gamer Statistics </label></br></br></p>
+<label style="font-size:36px;color:#7BA6B4;"  > Gamer Statistics </label></br></p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
@@ -74,6 +68,10 @@ var interval = setInterval(function() {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <label style="font-size:30px;color:#0000A0;"  >words : </label>
 <label id="totalwords" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;"></label>
+<script>
+document.getElementById('divscore').innerHTML = window.localStorage.getItem('finalscore');
+document.getElementById('totalwords').innerHTML = window.localStorage.getItem('wordcount');
+</script>
 <p>
 </p>
 <p>
