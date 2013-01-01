@@ -43,12 +43,9 @@ function testAPI() {
 function login() {
     FB.login(function(response) {
         if (response.authResponse) {
-			if(window.document.href == "http://www.wordtrix.in/")
-			   window.location.replace('http://www.wordtrix.in/game.html');
             // connected
         } else {
             // cancelled
-			alert("authorization failed, try again");
         }
     });
 }
