@@ -126,22 +126,29 @@ function updatescore()
 	score += len *len;
 	document.getElementById("score_div").innerHTML = score;	
     addfoundword();	
-	 var snd = new Audio("/sounds/correct.mp3"); // buffers automatically when created
+	var snd = new Audio("/sounds/correct.mp3"); // buffers automatically when created
 snd.play();
 	}
 	else
 	{
-		 var snd = new Audio("/sounds/wrong.mp3"); // buffers automatically when created
-snd.play();
+	var snd = new Audio("/sounds/wrong.mp3"); // buffers automatically when created
+snd.play();	
 	console.log("invalid word");
 	}
 	}
 	else
+	{
 	console.log(" already found");
-	 var snd = new Audio("/sounds/exists.mp3"); // buffers automatically when created
-snd.play();}
+	var snd = new Audio("/sounds/exists.mp3"); // buffers automatically when created
+snd.play();
+	}
+	}
 	else
+	{
 	console.log('too short');
+	var snd = new Audio("/sounds/wrong.mp3"); // buffers automatically when created
+snd.play();
+	}
 }
 
 
