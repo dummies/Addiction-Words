@@ -55,7 +55,7 @@
     
 <div id="details" style="background-color:#3c3c3c; opacity:0.80; height:150px; margin-top:3px; margin-left:100px; margin-right:100px">
      <!--  <p style="margin-top:0px; text-align:center; color:#dedede; font-size:40px; font-family:segoe Ui; font-weight:bold">Wordtrix </p>-->
-       <p align="center" style="font-size:26px; font-family:segoe Ui;color:#dedede">Here is your chance to play with words and compete with your riends. Get ready to try out your word making skills at wordtrix and compare your scores with your fellow mates</p>
+       <p align="center" style="font-size:26px; font-family:segoe Ui;color:#dedede">Play with words and compete with other gamers on the internet. Get ready to try out your word making skills at wordtrix and have fun playing it! :)</p>
        <div style="margin-top:0px; margin-left:750px">
                        <a href="http://www.wordtrix.in/game.html" class="hover-panel">
                     <h3 align="center">Play the game</h3>
