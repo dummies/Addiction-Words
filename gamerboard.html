@@ -9,7 +9,6 @@
  window.onload = function() {
 document.getElementById('divscore').innerHTML = window.localStorage.getItem('finalscore');
 document.getElementById('totalwords').innerHTML = window.localStorage.getItem('wordcount');
-FB.login();
  };
 </script>
 <script>
@@ -55,24 +54,24 @@ var interval = setInterval(function() {
 		</ul>
 		</div>
         <div style="float:right;">
-        <img id="user_photo_large" height="50px" width="50px;" style="padding:30px;margin-right:90px;">
+        <img id="user_photo" height="50px" width="50px;" style="padding:30px;margin-right:90px;">
         <label id="user_name" style="position:relative;left:-115px;top:-40px;color:#FFF"> Hi ,Player </label>
         </div>
 	</div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="font-size:24px;color:#0000A0;margin-left:200px;"  > next game : </label>
 <label id="timer_div" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0080FF;"></label>
-<img src="images/facebook.jpg" id="user_image" height="200" width="200" style="margin-left:100px; position:absolute; left: -96px; top: 183px;" />
+<img src="images/facebook.jpg" id="user_image_large" height="200" width="200" style="margin-left:100px; position:absolute; left: -96px; top: 183px;" />
 <p><br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <label style="font-size:36px;color:#7BA6B4;"  > Gamer Statistics </label></br></br></p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
-<label style="font-size:30px;color:#0000A0;margin-left:210px;"> score : </label>
-<label id="divscore" style="margin-left:40px;font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;">78</label>
+&nbsp;&nbsp;&nbsp;<label style="font-size:30px;color:#0000A0;margin-left:210px;"> score : </label>
+<label id="divscore" style="margin-left:40px;font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;"></label>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <label style="font-size:30px;color:#0000A0;"  >words : </label>
 <label id="totalwords" style="font:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size:36px; color:#0000A0;"></label>
 <p>

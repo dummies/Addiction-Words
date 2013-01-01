@@ -126,12 +126,12 @@ function updatescore()
 	score += len *len;
 	document.getElementById("score_div").innerHTML = score;	
     addfoundword();	
-	var snd = new Audio("/sounds/correct.mp3"); // buffers automatically when created
+	var snd = new Audio("/sounds/correct.wav"); // buffers automatically when created
 snd.play();
 	}
 	else
 	{
-	var snd = new Audio("/sounds/wrong.mp3"); // buffers automatically when created
+	var snd = new Audio("/sounds/wrong.wav"); // buffers automatically when created
 snd.play();	
 	console.log("invalid word");
 	}
@@ -139,14 +139,14 @@ snd.play();
 	else
 	{
 	console.log(" already found");
-	var snd = new Audio("/sounds/exists.mp3"); // buffers automatically when created
+	var snd = new Audio("/sounds/exists.wav"); // buffers automatically when created
 snd.play();
 	}
 	}
 	else
 	{
 	console.log('too short');
-	var snd = new Audio("/sounds/wrong.mp3"); // buffers automatically when created
+	var snd = new Audio("/sounds/wrong.wav"); // buffers automatically when created
 snd.play();
 	}
 }
@@ -267,6 +267,11 @@ function init() {
 	}
 	var interval = setInterval(function() {
     document.getElementById('timer_div').innerHTML = --seconds_left;
+	if(seconds_left==8)
+	{
+		var snd = new Audio("/sounds/clock.ogg"); // buffers automatically when created
+snd.play();
+	}
     if (seconds_left <= 0)
     {
         document.getElementById('timer_div').innerHTML = "Time's up";
