@@ -15,10 +15,9 @@
 <body>
 <?php  set_time_limit(0); ?>
  <img style="background-color:transparent;float:left" src="/images/board.PNG" width="100" height="100">
-<br><br><br><label style="font-size:30px;color:#7BA6B4;"  > Gamer Board </label> </br></br></br>
+<br><br><br><label style="font-size:30px;color:#FF0000;"  > Gamer Board </label> </br></br></br>
 <br/>
 <?php
-   
 	try {
     $conn = new PDO ( "sqlsrv:server = tcp:pvp6ee8yc7.database.windows.net,1433; Database = gamer_scores", "dummies", "dumm!es3");
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
