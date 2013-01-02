@@ -1,3 +1,5 @@
+
+var readytogo =false,clicked =false;
  window.fbAsyncInit = function() {
     // init the FB JS SDK
     FB.init({
@@ -43,11 +45,25 @@ function testAPI() {
 function login() {
     FB.login(function(response) {
         if (response.authResponse) {
-            // connected
+            // connected 
+			if(clicked ) 
+			loginCheck();
+		
         } else {
             // cancelled
         }
     });
+}
+
+function loginCheck() {
+	clicked =true;
+	if(readytogo) {
+		window.location.href = "game.html";
+	}
+	else {
+		login();
+		//loginCheck();
+	}
 }
 function loginUser() {    
      FB.login(function(response) { }, {scope:'email'});     
@@ -67,8 +83,9 @@ function logoutUser() {
 }
 function updateUserInfo(response) 
 {
-	   console.log(response);
+	  // console.log(response);
      FB.api('/me', function(response) {
+		 readytogo =true;
        //document.getElementById('user-info').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + 'hello ' + response.name;
        //document.getElementById('user_photo').innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">';
 	   name = response.name;
