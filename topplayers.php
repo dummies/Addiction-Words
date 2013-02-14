@@ -1,6 +1,29 @@
 <html>
 <head>
+<title>wordtrix</title>
+<link rel="shortcut icon" href="images/icon.png" type="image/x-icon" />
+<meta charset="utf-8"/>
 <link href="styles/images.css" rel="stylesheet" type="text/css">
+<script src="js/fb.js"> </script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<style>
+.goup {
+	position:relative;
+	top:-80px;
+	color:#fff;
+    font-size:20px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.goup2 {
+	position:relative;
+	top:-90px;
+	color:#fff;
+    font-size:20px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+</style>
 </head>
 
 
